@@ -4,6 +4,7 @@
 
 * PHP 5.4.0 or above
 * [Composer](https://getcomposer.org)
+* An [OpenAI API key](https://platform.openai.com/docs/api-reference/authentication)
 
 ## Quick set up
 
