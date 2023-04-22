@@ -22,4 +22,19 @@ class OpenAIModels extends OpenAI
 
         return (isset($response->data)) ? $response->data : null;
     }
+
+    /**
+     * Gets a specific OpenAI model.
+     *
+     * @see https://platform.openai.com/docs/api-reference/models/retrieve
+     *
+     * @param string $model the model ID
+     *                      Example: gpt-3.5-turbo
+     *
+     * @return array an array of OpenAI model objects
+     */
+    public function getModel($model)
+    {
+        return $this->request('GET', '/models/'.$model);
+    }
 }
