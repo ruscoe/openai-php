@@ -12,11 +12,13 @@
 `cd openai-php`
 `composer install`
 
-## Usage Example
+## Usage example
 
 In a PHP file:
 
 ```php
+<?php
+
 require 'PATH_TO_LIBRARY/vendor/autoload.php';
 
 // @see https://platform.openai.com/docs/api-reference/authentication
