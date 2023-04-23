@@ -9,15 +9,16 @@
 ## Quick set up
 
 `git clone git@github.com:ruscoe/openai-php.git`
+
 `cd openai-php`
+
 `composer install`
 
 ## Usage example
 
-This example asks the text-davinci-003 to describe a keyboard.
-It instructions the OpenAI API to use more than the default
-number of tokens so a reasonable length description can be
-returned.
+This example asks the `text-davinci-003` model to describe a keyboard.
+It instructs the OpenAI API to use more than the default number of
+tokens so a reasonable length description can be returned.
 
 ```php
 <?php
@@ -50,7 +51,10 @@ object(stdClass)#34 (6) {
     object(stdClass)#32 (4) {
       ["text"]=>
       string(320) "
-A keyboard is a peripheral device used to operate a computer or other electronic machines. It typically consists of alphanumeric and other keys that make use of electronic signals to cause a certain action on the system. It often has trackpoint or a touchpad that allows users to control the cursor on the computer."
+A keyboard is a peripheral device used to operate a computer or other electronic machines.
+It typically consists of alphanumeric and other keys that make use of electronic signals
+to cause a certain action on the system. It often has trackpoint or a touchpad that
+allows users to control the cursor on the computer."
     }
   }
 }
