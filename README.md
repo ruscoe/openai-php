@@ -11,6 +11,9 @@
 
 * `/completions` - create a new completion
 
+### Edits
+
+* `/edits` - create an edit for a given input
 
 ## Requirements
 
