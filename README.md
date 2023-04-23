@@ -1,5 +1,17 @@
 # PHP library for the OpenAI API
 
+## Supported methods
+
+### Models
+
+* `/models` - get a list of OpenAI models
+* `/models/{model}` - get a specific openAI model
+
+### Completions
+
+* `/completions` - create a new completion
+
+
 ## Requirements
 
 * PHP 5.4.0 or above
@@ -59,14 +71,3 @@ allows users to control the cursor on the computer."
   }
 }
 ```
-
-## Supported methods
-
-### Models
-
-* `/models` - get a list of OpenAI models
-* `/models/{model}` - get a specific openAI model
-
-### Completions
-
-* `/completions` - create a new completion
