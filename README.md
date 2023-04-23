@@ -47,10 +47,9 @@ $api = new OpenAI\OpenAICompletions($api_key);
 
 $parameters = [
     'max_tokens' => 64,
-    'prompt' => 'Describe a keyboard',
 ];
 
-$response = $api->create('text-davinci-003', $parameters);
+$response = $api->create('text-davinci-003', 'Describe a keyboard', $parameters);
 
 var_dump($response);
 ```
