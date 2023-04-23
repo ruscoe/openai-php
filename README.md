@@ -14,7 +14,10 @@
 
 ## Usage example
 
-In a PHP file:
+This example asks the text-davinci-003 to describe a keyboard.
+It instructions the OpenAI API to use more than the default
+number of tokens so a reasonable length description can be
+returned.
 
 ```php
 <?php
@@ -24,11 +27,33 @@ require 'PATH TO LIBRARY/vendor/autoload.php';
 // @see https://platform.openai.com/docs/api-reference/authentication
 $api_key = 'YOUR API KEY';
 
-$api = new OpenAI\OpenAIModels($api_key);
+$api = new OpenAI\OpenAICompletions($api_key);
 
-$models = $api->getModels();
+$parameters = [
+    'max_tokens' => 64,
+    'prompt' => 'Describe a keyboard',
+];
 
-var_dump($models);
+$response = $api->create('text-davinci-003', $parameters);
+
+var_dump($response);
+```
+
+The trimmed response:
+```
+object(stdClass)#34 (6) {
+  ["model"]=>
+  string(16) "text-davinci-003"
+  ["choices"]=>
+  array(1) {
+    [0]=>
+    object(stdClass)#32 (4) {
+      ["text"]=>
+      string(320) "
+A keyboard is a peripheral device used to operate a computer or other electronic machines. It typically consists of alphanumeric and other keys that make use of electronic signals to cause a certain action on the system. It often has trackpoint or a touchpad that allows users to control the cursor on the computer."
+    }
+  }
+}
 ```
 
 ## Supported methods
@@ -37,3 +62,7 @@ var_dump($models);
 
 * `/models` - get a list of OpenAI models
 * `/models/{model}` - get a specific openAI model
+
+### Completions
+
+* `/completions` - create a new completion
