@@ -13,7 +13,7 @@ namespace OpenAI;
 class OpenAICompletions extends OpenAI
 {
     /**
-     * Gets a specific OpenAI model.
+     * Creates a completion.
      *
      * @see https://platform.openai.com/docs/api-reference/completions/create
      *
