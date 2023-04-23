@@ -15,6 +15,10 @@
 
 * `/edits` - create an edit for a given input
 
+### Images
+
+* `/images/generations` - create images
+
 ## Requirements
 
 * PHP 5.4.0 or above
