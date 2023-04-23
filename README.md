@@ -71,3 +71,7 @@ allows users to control the cursor on the computer."
   }
 }
 ```
+
+## License
+
+[MIT](https://mit-license.org)

@@ -8,6 +8,9 @@ use \Exception;
  * OpenAI API exception.
  *
  * @package OpenAI
+ * @author  Dan Ruscoe <danruscoe@protonmail.com>
+ * @license MIT https://mit-license.org/
+ * @link    https://github.com/ruscoe/openai-php
  */
 class OpenAIException extends Exception
 {

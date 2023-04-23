@@ -6,6 +6,9 @@ namespace OpenAI;
  * OpenAI API Completions library.
  *
  * @package OpenAI
+ * @author  Dan Ruscoe <danruscoe@protonmail.com>
+ * @license MIT https://mit-license.org/
+ * @link    https://github.com/ruscoe/openai-php
  */
 class OpenAICompletions extends OpenAI
 {
