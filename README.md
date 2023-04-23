@@ -19,7 +19,7 @@ In a PHP file:
 ```php
 <?php
 
-require 'PATH_TO_LIBRARY/vendor/autoload.php';
+require 'PATH TO LIBRARY/vendor/autoload.php';
 
 // @see https://platform.openai.com/docs/api-reference/authentication
 $api_key = 'YOUR API KEY';
@@ -30,3 +30,10 @@ $models = $api->getModels();
 
 var_dump($models);
 ```
+
+## Supported methods
+
+### Models
+
+* `/models` - get a list of OpenAI models
+* `/models/{model}` - get a specific openAI model
