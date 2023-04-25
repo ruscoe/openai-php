@@ -23,15 +23,17 @@ class OpenAICompletions extends OpenAI
      *                           Check model compatibility for valid models
      *                           https://platform.openai.com/docs/models/model-endpoint-compatibility
      * @param mixed  $prompt     optional prompt(s) to generate a completion for (string or array)
+     * @param int    $number     number of completions to create
      * @param array  $parameters optional array of parameters to use
      *
      * @return array of completion objects
      */
-    public function create($model, $prompt = null, $parameters = [])
+    public function create($model, $prompt = null, $number = 1, $parameters = [])
     {
         // Add required parameters.
         $parameters['model'] = $model;
         $parameters['prompt'] = $prompt;
+        $parameters['n'] = $number;
 
         $response = $this->request('POST', '/completions', $parameters);
 

@@ -53,12 +53,12 @@ $parameters = [
     'max_tokens' => 64,
 ];
 
-$response = $api->create('text-davinci-003', 'Describe a keyboard', $parameters);
+$response = $api->create('text-davinci-003', 'Describe a keyboard', 1, $parameters);
 
 var_dump($response);
 ```
 
-The trimmed response:
+The response:
 ```
 array(1) {
   [0]=>
