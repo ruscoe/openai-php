@@ -26,7 +26,7 @@ class OpenAICompletions extends OpenAI
      * @param int    $number     number of completions to create
      * @param array  $parameters optional array of parameters to use
      *
-     * @return array of completion objects
+     * @return array array of completion objects
      */
     public function create($model, $prompt = null, $number = 1, $parameters = [])
     {
