@@ -92,7 +92,8 @@ $response = $api->createAsURL('A red six-sided dice in water', 2, '256x256');
 
 The response
 
-
+![img-En2d68xA9UIv6jLatSjEuonV](https://user-images.githubusercontent.com/87952/234153728-f996cf8d-46d8-4353-9d79-4eb643615ccc.png)
+![img-Tt54f3mLG0SpP6EPwgbe7zr5](https://user-images.githubusercontent.com/87952/234153737-8630f37e-e1ff-42de-916a-2d1dff21f51f.png)
 
 ## License
 
