@@ -13,7 +13,7 @@ namespace OpenAI;
 class OpenAICompletions extends OpenAI
 {
     /**
-     * Creates a completion.
+     * Instructs OpenAI to create one or more completions from a given input.
      *
      * @see https://platform.openai.com/docs/api-reference/completions/create
      *
@@ -25,7 +25,7 @@ class OpenAICompletions extends OpenAI
      * @param mixed  $prompt     optional prompt(s) to generate a completion for (string or array)
      * @param array  $parameters optional array of parameters to use
      *
-     * @return object the completion object
+     * @return array of completion objects
      */
     public function create($model, $prompt = null, $parameters = [])
     {
@@ -33,6 +33,8 @@ class OpenAICompletions extends OpenAI
         $parameters['model'] = $model;
         $parameters['prompt'] = $prompt;
 
-        return $this->request('POST', '/completions', $parameters);
+        $response = $this->request('POST', '/completions', $parameters);
+
+        return (isset($response->choices)) ? $response->choices : null;
     }
 }

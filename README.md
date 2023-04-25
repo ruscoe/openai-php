@@ -60,22 +60,22 @@ var_dump($response);
 
 The trimmed response:
 ```
-object(stdClass)#34 (6) {
-  ["model"]=>
-  string(16) "text-davinci-003"
-  ["choices"]=>
-  array(1) {
-    [0]=>
-    object(stdClass)#32 (4) {
-      ["text"]=>
-      string(320) "
-A keyboard is a peripheral device used to operate a computer or other electronic machines.
-It typically consists of alphanumeric and other keys that make use of electronic signals
-to cause a certain action on the system. It often has trackpoint or a touchpad that
-allows users to control the cursor on the computer."
-    }
+array(1) {
+  [0]=>
+  object(stdClass)#32 (4) {
+    ["text"]=>
+    string(282) "
+
+A keyboard is a peripheral device that can be connected to a computer to provide an easier way to enter data. A standard keyboard usually consists of alphanumeric keys which can be used to type words and numbers, as well as a number of special keys for performing various functions."
+    ["index"]=>
+    int(0)
+    ["logprobs"]=>
+    NULL
+    ["finish_reason"]=>
+    string(6) "length"
   }
 }
+
 ```
 
 ## License
