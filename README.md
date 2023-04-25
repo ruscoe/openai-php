@@ -85,6 +85,13 @@ A keyboard is a peripheral device that can be connected to a computer to provide
 This example asks for two images of a red six-sided dice in water.
 
 ```php
+<?php
+
+require 'PATH TO LIBRARY/vendor/autoload.php';
+
+// @see https://platform.openai.com/docs/api-reference/authentication
+$api_key = 'YOUR API KEY';
+
 $api = new OpenAI\OpenAIImages($api_key);
 
 $response = $api->createAsURL('A red six-sided dice in water', 2, '256x256');
