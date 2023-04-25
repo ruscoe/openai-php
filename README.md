@@ -11,6 +11,10 @@
 
 * `/completions` - create a new completion
 
+### Chat
+
+* `/chat/completions` - create a new chat completion
+
 ### Edits
 
 * `/edits` - create an edit for a given input
@@ -78,6 +82,49 @@ A keyboard is a peripheral device that can be connected to a computer to provide
   }
 }
 
+```
+
+### Chat
+
+This example sends a simple chat message.
+
+```php
+<?php
+
+require 'PATH TO LIBRARY/vendor/autoload.php';
+
+// @see https://platform.openai.com/docs/api-reference/authentication
+$api_key = 'YOUR API KEY';
+
+$api = new OpenAI\OpenAIChat($api_key);
+
+$messages = [
+    (object) ['role' => 'user', 'content' => 'Hello, friend!'],
+];
+
+$response = $api->create('gpt-3.5-turbo', $messages);
+
+var_dump($response);
+```
+
+The response:
+```
+array(1) {
+  [0]=>
+  object(stdClass)#29 (3) {
+    ["message"]=>
+    object(stdClass)#19 (2) {
+      ["role"]=>
+      string(9) "assistant"
+      ["content"]=>
+      string(38) "Hello there! How can I help you today?"
+    }
+    ["finish_reason"]=>
+    string(4) "stop"
+    ["index"]=>
+    int(0)
+  }
+}
 ```
 
 ### Images
