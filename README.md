@@ -33,7 +33,9 @@
 
 `composer install`
 
-## Usage example
+## Usage examples
+
+### Completions
 
 This example asks the `text-davinci-003` model to describe a keyboard.
 It instructs the OpenAI API to use more than the default number of
@@ -77,6 +79,20 @@ A keyboard is a peripheral device that can be connected to a computer to provide
 }
 
 ```
+
+### Images
+
+This example asks for two images of a red six-sided dice in water.
+
+```php
+$api = new OpenAI\OpenAIImages($api_key);
+
+$response = $api->createAsURL('A red six-sided dice in water', 2, '256x256');
+```
+
+The response
+
+
 
 ## License
 
