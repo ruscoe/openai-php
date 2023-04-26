@@ -23,6 +23,10 @@
 
 * `/images/generations` - create images
 
+### Moderations
+
+* `/moderations` - request a moderation check
+
 ## Requirements
 
 * PHP 5.4.0 or above
