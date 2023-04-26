@@ -15,7 +15,7 @@ class OpenAIChat extends OpenAI
     /**
      * Instructs OpenAI to create one or more completions from a chat conversation.
      *
-     * @see https://platform.openai.com/docs/api-reference/completions/create
+     * @see https://platform.openai.com/docs/api-reference/chat/create
      *
      * @param string $model      the model ID that should be used to create the completion
      *                           Example:
