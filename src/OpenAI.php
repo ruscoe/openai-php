@@ -46,7 +46,8 @@ class OpenAI
     /**
      * Makes a request to the OpenAI API.
      *
-     * @param string $method     the REST method to use when making the request
+     * @param string $method     the method to use when making the request
+     *                           GET, POST or form
      * @param string $path       the API path to request
      * @param array  $parameters parameters to send with the request
      *
@@ -65,6 +66,14 @@ class OpenAI
             // GET request parameters are included in the query string.
             $options['query'] = $parameters;
         }
+        else if ($method == 'form') {
+            // Form data may be submitted as multipart or form_params. Never both.
+            if (isset($parameters['multipart'])) {
+                $options['multipart'] = $parameters['multipart'];
+            } else {
+                $options['form_params'] = $parameters;
+            }
+        }
         else {
             // POST parameters are included in the request body as JSON.
             $options['json'] = (object) $parameters;
@@ -72,7 +81,7 @@ class OpenAI
   
         try {
             $url = $this->endpoint.$path;
-            $response = $this->client->request($method, $url, $options);
+            $response = $this->client->request(($method == 'form') ? 'POST' : $method, $url, $options);
             $data = json_decode($response->getBody());
   
             return $data;

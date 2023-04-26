@@ -22,6 +22,7 @@
 ### Images
 
 * `/images/generations` - create images
+* `/images/variations` - create image variations
 
 ### Moderations
 
