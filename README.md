@@ -194,6 +194,9 @@ $response = $api->createEditAsURL('edit.png', 'a duck driving a car', 'edit_mask
 
 The source and response
 
+![edit](https://user-images.githubusercontent.com/87952/234949655-8d055b40-e668-4e38-8c35-e6823c4fa047.png)
+![edit_mask](https://user-images.githubusercontent.com/87952/234949679-624f6ee2-1e15-487a-9332-3bad136343ca.png)
+![edit1](https://user-images.githubusercontent.com/87952/234949702-566aa1d7-f7c1-4788-b1c7-8b2b7bbcf468.png)
 
 ## License
 
