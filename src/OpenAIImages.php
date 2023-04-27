@@ -191,7 +191,7 @@ class OpenAIImages extends OpenAI
         // Include parameters in multipart data.
         foreach ($parameters as $key => $value) {
             $multipart[] = [
-                'name' => $key,
+                'name'     => $key,
                 'contents' => $value,
             ];
         }
