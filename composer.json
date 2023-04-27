@@ -1,6 +1,6 @@
 {
     "name": "ruscoe/openai-php",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "type": "library",
     "description": "PHP library for the OpenAI API",
     "homepage": "https://github.com/ruscoe/openai-php",
