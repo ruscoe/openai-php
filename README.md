@@ -154,8 +154,8 @@ $response = $api->createAsURL('A red six-sided dice in water', 2, '256x256');
 
 The response
 
-![img-En2d68xA9UIv6jLatSjEuonV](https://user-images.githubusercontent.com/87952/234153728-f996cf8d-46d8-4353-9d79-4eb643615ccc.png)
-![img-Tt54f3mLG0SpP6EPwgbe7zr5](https://user-images.githubusercontent.com/87952/234153737-8630f37e-e1ff-42de-916a-2d1dff21f51f.png)
+![img-OFmHrZWgvmnGmizogrqP5SGv](https://user-images.githubusercontent.com/87952/234959056-0c86d4ae-175c-49d5-b8ea-ca0e49a94186.png)
+![img-9O0Nv8GCurUr86pzzkv4dlJE](https://user-images.githubusercontent.com/87952/234959077-882399fc-bb9a-4479-b8ea-722e89c6acf3.png)
 
 **Create image variation**
 
