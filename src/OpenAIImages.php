@@ -105,7 +105,7 @@ class OpenAIImages extends OpenAI
      *
      * @return array a URL for each image generated
      */
-    public function createVariationsAsURL($image, $number = 1, $size = '1024x1024', $parameters = [])
+    public function createVariationAsURL($image, $number = 1, $size = '1024x1024', $parameters = [])
     {
         // Add required parameters.
         $parameters['n'] = $number;
@@ -114,7 +114,7 @@ class OpenAIImages extends OpenAI
         // Enforce response format as url for this function.
         $parameters['response_format'] = 'url';
 
-        $response = $this->createVariations($image, $parameters);
+        $response = $this->createVariation($image, $parameters);
 
         if (isset($response->data)) {
             $urls = [];
@@ -143,7 +143,7 @@ class OpenAIImages extends OpenAI
      *
      * @return array a URL for each image generated
      */
-    public function createVariationsAsBase64($image, $number = 1, $size = '1024x1024', $parameters = [])
+    public function createVariationAsBase64($image, $number = 1, $size = '1024x1024', $parameters = [])
     {
         // Add required parameters.
         $parameters['n'] = $number;
@@ -152,7 +152,7 @@ class OpenAIImages extends OpenAI
         // Enforce response format as b64_json for this function.
         $parameters['response_format'] = 'b64_json';
 
-        $response = $this->createVariations($image, $parameters);
+        $response = $this->createVariation($image, $parameters);
 
         if (isset($response->data)) {
             $images = [];
@@ -176,9 +176,9 @@ class OpenAIImages extends OpenAI
      * @param string $image      the path to the image file
      * @param array  $parameters optional array of parameters to use
      *
-     * @return object the image variations response object
+     * @return object the image variation response object
      */
-    public function createVariations($image, $parameters = [])
+    public function createVariation($image, $parameters = [])
     {
         // Include image parameter in multipart data.
         $multipart = [
