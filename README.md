@@ -174,6 +174,8 @@ $response = $api->createVariationAsURL('variation.png', 1, '256x256');
 
 The source and response
 
+![variation](https://user-images.githubusercontent.com/87952/234940408-4beec8a3-6a8b-44bd-b9d1-fda9a8a98c6e.png)
+![variation1](https://user-images.githubusercontent.com/87952/234940430-408e14c5-a338-49f7-918f-a3eee632dc1d.png)
 
 ## License
 
