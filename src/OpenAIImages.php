@@ -180,23 +180,23 @@ class OpenAIImages extends OpenAI
      */
     public function createVariations($image, $parameters = [])
     {
-        // Include image parameter in multipart form data.
-        $form_params['multipart'] = [
+        // Include image parameter in multipart data.
+        $multipart = [
             [
                 'name'     => 'image',
                 'contents' => Psr7\Utils::tryFopen($image, 'r'),
             ],
         ];
 
-        // Include parameters in multipart form data.
+        // Include parameters in multipart data.
         foreach ($parameters as $key => $value) {
-            $form_params['multipart'][] = [
+            $multipart[] = [
                 'name' => $key,
                 'contents' => $value,
             ];
         }
 
-        $response = $this->request('form', '/images/variations', $form_params);
+        $response = $this->request('multipart', '/images/variations', $multipart);
 
         return $response;
     }
