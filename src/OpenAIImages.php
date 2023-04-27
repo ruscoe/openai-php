@@ -42,8 +42,7 @@ class OpenAIImages extends OpenAI
         if (isset($response->data)) {
             $urls = [];
 
-            foreach ($response->data as $object)
-            {
+            foreach ($response->data as $object) {
                 $urls[] = $object->url;
             }
 
@@ -81,8 +80,7 @@ class OpenAIImages extends OpenAI
         if (isset($response->data)) {
             $images = [];
 
-            foreach ($response->data as $object)
-            {
+            foreach ($response->data as $object) {
                 $images[] = $object->b64_json;
             }
 
@@ -119,8 +117,7 @@ class OpenAIImages extends OpenAI
         if (isset($response->data)) {
             $urls = [];
 
-            foreach ($response->data as $object)
-            {
+            foreach ($response->data as $object) {
                 $urls[] = $object->url;
             }
 
@@ -157,8 +154,7 @@ class OpenAIImages extends OpenAI
         if (isset($response->data)) {
             $images = [];
 
-            foreach ($response->data as $object)
-            {
+            foreach ($response->data as $object) {
                 $images[] = $object->b64_json;
             }
 
@@ -230,8 +226,7 @@ class OpenAIImages extends OpenAI
         if (isset($response->data)) {
             $urls = [];
 
-            foreach ($response->data as $object)
-            {
+            foreach ($response->data as $object) {
                 $urls[] = $object->url;
             }
 
@@ -270,8 +265,7 @@ class OpenAIImages extends OpenAI
         if (isset($response->data)) {
             $images = [];
 
-            foreach ($response->data as $object)
-            {
+            foreach ($response->data as $object) {
                 $images[] = $object->b64_json;
             }
 
