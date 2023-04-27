@@ -23,6 +23,7 @@
 
 * `/images/generations` - create images
 * `/images/variations` - create image variations
+* `/images/edits` - create image edits
 
 ### Moderations
 
