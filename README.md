@@ -25,6 +25,10 @@
 * `/images/variations` - create image variations
 * `/images/edits` - create image edits
 
+### Audio
+
+* `/audio/transcriptions` - transcribe audio
+
 ### Moderations
 
 * `/moderations` - request a moderation check
