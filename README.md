@@ -135,6 +135,8 @@ array(1) {
 
 ### Images
 
+**Create image**
+
 This example asks for two images of a red six-sided dice in water.
 
 ```php
@@ -154,6 +156,24 @@ The response
 
 ![img-En2d68xA9UIv6jLatSjEuonV](https://user-images.githubusercontent.com/87952/234153728-f996cf8d-46d8-4353-9d79-4eb643615ccc.png)
 ![img-Tt54f3mLG0SpP6EPwgbe7zr5](https://user-images.githubusercontent.com/87952/234153737-8630f37e-e1ff-42de-916a-2d1dff21f51f.png)
+
+**Create image variation**
+
+```php
+<?php
+
+require 'PATH TO LIBRARY/vendor/autoload.php';
+
+// @see https://platform.openai.com/docs/api-reference/authentication
+$api_key = 'YOUR API KEY';
+
+$api = new OpenAI\OpenAIImages($api_key);
+
+$response = $api->createVariationAsURL('variation.png', 1, '256x256');
+```
+
+The source and response
+
 
 ## License
 
