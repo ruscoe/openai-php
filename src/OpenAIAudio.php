@@ -17,8 +17,6 @@ class OpenAIAudio extends OpenAI
     /**
      * Transcribes text from an audio file.
      *
-     * @see https://platform.openai.com/docs/api-reference/audio/create
-     *
      * @param string $file       the path to the audio file
      * @param string $model      the ID of the model to use
      *                           currently only whisper-1
@@ -26,6 +24,8 @@ class OpenAIAudio extends OpenAI
      * @param array  $parameters optional array of parameters to use
      *
      * @return string the transcribed text
+     *
+     * @see https://platform.openai.com/docs/api-reference/audio/create
      */
     public function transcribe($file, $model = 'whisper-1', $parameters = [])
     {

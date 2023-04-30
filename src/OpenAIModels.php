@@ -14,10 +14,10 @@ class OpenAIModels extends OpenAI
 {
     /**
      * Gets available OpenAI models.
-     *
-     * @see https://platform.openai.com/docs/api-reference/models/list
      * 
      * @return array an array of OpenAI model objects
+     *
+     * @see https://platform.openai.com/docs/api-reference/models/list
      */
     public function getModels()
     {
@@ -29,12 +29,12 @@ class OpenAIModels extends OpenAI
     /**
      * Gets a specific OpenAI model.
      *
-     * @see https://platform.openai.com/docs/api-reference/models/retrieve
-     *
      * @param string $model the model ID
      *                      Example: gpt-3.5-turbo
      *
      * @return array an array of OpenAI model objects
+     *
+     * @see https://platform.openai.com/docs/api-reference/models/retrieve
      */
     public function getModel($model)
     {

@@ -15,12 +15,13 @@ class OpenAIModerations extends OpenAI
     /**
      * Requests a moderation result from OpenAI.
      *
-     * @see https://platform.openai.com/docs/api-reference/moderations/create
-     *
-     * @param mixed $input      input(s) to request moderation result(s) for (string or array)
+     * @param mixed $input      input(s) to request moderation result(s) for
+     *                          (string or array)
      * @param array $parameters optional array of parameters to use
      *
      * @return array array of moderation result objects
+     *
+     * @see https://platform.openai.com/docs/api-reference/moderations/create
      */
     public function create($input, $parameters = [])
     {

@@ -17,8 +17,6 @@ class OpenAIImages extends OpenAI
     /**
      * Generates a number of images and returns URLs.
      *
-     * @see https://platform.openai.com/docs/api-reference/images/create
-     *
      * @param string $prompt     a description of the image to generate
      * @param int    $number     the number of images to generate
      * @param string $size       the size in pixels of the image
@@ -26,6 +24,8 @@ class OpenAIImages extends OpenAI
      * @param array  $parameters optional array of parameters to use
      *
      * @return array a URL for each image generated
+     *
+     * @see https://platform.openai.com/docs/api-reference/images/create
      */
     public function createAsURL($prompt, $number = 1, $size = '1024x1024', $parameters = [])
     {
@@ -55,8 +55,6 @@ class OpenAIImages extends OpenAI
     /**
      * Generates a number of images and returns Base64 encoded image(s).
      *
-     * @see https://platform.openai.com/docs/api-reference/images/create
-     *
      * @param string $prompt     a description of the image to generate
      * @param int    $number     the number of images to generate
      * @param string $size       the size in pixels of the image
@@ -64,6 +62,8 @@ class OpenAIImages extends OpenAI
      * @param array  $parameters optional array of parameters to use
      *
      * @return array a URL for each image generated
+     *
+     * @see https://platform.openai.com/docs/api-reference/images/create
      */
     public function createAsBase64($prompt, $number = 1, $size = '1024x1024', $parameters = [])
     {
@@ -93,8 +93,6 @@ class OpenAIImages extends OpenAI
     /**
      * Generates a number of image variations and returns URL(s).
      *
-     * @see https://platform.openai.com/docs/api-reference/images/create-variation
-     *
      * @param string $image      the path to the image file
      * @param int    $number     the number of images to generate
      * @param string $size       the size in pixels of the image
@@ -102,6 +100,8 @@ class OpenAIImages extends OpenAI
      * @param array  $parameters optional array of parameters to use
      *
      * @return array a URL for each image generated
+     *
+     * @see https://platform.openai.com/docs/api-reference/images/create-variation
      */
     public function createVariationAsURL($image, $number = 1, $size = '1024x1024', $parameters = [])
     {
@@ -130,8 +130,6 @@ class OpenAIImages extends OpenAI
     /**
      * Generates a number of image variations and returns Base64 encoded image(s).
      *
-     * @see https://platform.openai.com/docs/api-reference/images/create-variation
-     *
      * @param string $image      the path to the image file
      * @param int    $number     the number of images to generate
      * @param string $size       the size in pixels of the image
@@ -139,6 +137,8 @@ class OpenAIImages extends OpenAI
      * @param array  $parameters optional array of parameters to use
      *
      * @return array a URL for each image generated
+     *
+     * @see https://platform.openai.com/docs/api-reference/images/create-variation
      */
     public function createVariationAsBase64($image, $number = 1, $size = '1024x1024', $parameters = [])
     {
@@ -167,12 +167,12 @@ class OpenAIImages extends OpenAI
     /**
      * Generates a number of image variations from a given image.
      *
-     * @see https://platform.openai.com/docs/api-reference/images/create-variation
-     *
      * @param string $image      the path to the image file
      * @param array  $parameters optional array of parameters to use
      *
      * @return object the image variation response object
+     *
+     * @see https://platform.openai.com/docs/api-reference/images/create-variation
      */
     public function createVariation($image, $parameters = [])
     {
@@ -200,8 +200,6 @@ class OpenAIImages extends OpenAI
     /**
      * Generates a number of image edits and returns URL(s).
      *
-     * @see https://platform.openai.com/docs/api-reference/images/create-edit
-     *
      * @param string $image      the path to the image file
      * @param string $prompt     a description of the edit to make
      * @param string $mask       the path to the mask image file
@@ -211,6 +209,8 @@ class OpenAIImages extends OpenAI
      * @param array  $parameters optional array of parameters to use
      *
      * @return array a URL for each image generated
+     *
+     * @see https://platform.openai.com/docs/api-reference/images/create-edit
      */
     public function createEditAsURL($image, $prompt, $mask = null, $number = 1, $size = '1024x1024', $parameters = [])
     {
@@ -239,8 +239,6 @@ class OpenAIImages extends OpenAI
     /**
      * Generates a number of image edits and returns Base64 encoded image(s).
      *
-     * @see https://platform.openai.com/docs/api-reference/images/create-edit
-     *
      * @param string $image      the path to the image file
      * @param string $prompt     a description of the edit to make
      * @param string $mask       the path to the mask image file
@@ -250,6 +248,8 @@ class OpenAIImages extends OpenAI
      * @param array  $parameters optional array of parameters to use
      *
      * @return array a URL for each image generated
+     *
+     * @see https://platform.openai.com/docs/api-reference/images/create-edit
      */
     public function createEditAsBase64($image, $prompt, $mask = null, $number = 1, $size = '1024x1024', $parameters = [])
     {
@@ -278,14 +278,14 @@ class OpenAIImages extends OpenAI
     /**
      * Generates a number of image edits from a given image.
      *
-     * @see https://platform.openai.com/docs/api-reference/images/create-edit
-     *
      * @param string $image      the path to the image file
      * @param string $prompt     a description of the edit to make
      * @param string $mask       the path to the mask image file
      * @param array  $parameters optional array of parameters to use
      *
      * @return object the image edit response object
+     *
+     * @see https://platform.openai.com/docs/api-reference/images/create-edit
      */
     public function createEdit($image, $prompt, $mask = null, $parameters = [])
     {
