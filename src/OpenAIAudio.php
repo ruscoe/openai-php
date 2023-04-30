@@ -15,7 +15,7 @@ use GuzzleHttp\Psr7;
 class OpenAIAudio extends OpenAI
 {
     /**
-     * Instructs OpenAI to transcribe text from an audio file.
+     * Transcribes text from an audio file.
      *
      * @see https://platform.openai.com/docs/api-reference/audio/create
      *

@@ -13,7 +13,7 @@ namespace OpenAI;
 class OpenAIChat extends OpenAI
 {
     /**
-     * Instructs OpenAI to create one or more completions from a chat conversation.
+     * Creates one or more completions from a chat conversation.
      *
      * @see https://platform.openai.com/docs/api-reference/chat/create
      *

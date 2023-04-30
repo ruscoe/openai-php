@@ -13,7 +13,7 @@ namespace OpenAI;
 class OpenAICompletions extends OpenAI
 {
     /**
-     * Instructs OpenAI to create one or more completions from a given input.
+     * Creates one or more completions from a given input.
      *
      * @see https://platform.openai.com/docs/api-reference/completions/create
      *

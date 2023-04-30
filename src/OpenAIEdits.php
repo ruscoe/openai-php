@@ -13,7 +13,7 @@ namespace OpenAI;
 class OpenAIEdits extends OpenAI
 {
     /**
-     * Instructs OpenAI to perform an edit on a given input.
+     * Performs an edit on a given input.
      *
      * @see https://platform.openai.com/docs/api-reference/edits/create
      *

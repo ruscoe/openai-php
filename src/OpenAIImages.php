@@ -15,7 +15,7 @@ use GuzzleHttp\Psr7;
 class OpenAIImages extends OpenAI
 {
     /**
-     * Instructs OpenAI to generate an image / some images from a given input, returning URL(s).
+     * Generates a number of images and returns URLs.
      *
      * @see https://platform.openai.com/docs/api-reference/images/create
      *
@@ -53,7 +53,7 @@ class OpenAIImages extends OpenAI
     }
 
     /**
-     * Instructs OpenAI to generate an image / some images from a given input, returning Base64 encoded image(s).
+     * Generates a number of images and returns Base64 encoded image(s).
      *
      * @see https://platform.openai.com/docs/api-reference/images/create
      *
@@ -91,7 +91,7 @@ class OpenAIImages extends OpenAI
     }
 
     /**
-     * Instructs OpenAI to generate an image / some image variations from a given image, returning URL(s).
+     * Generates a number of image variations and returns URL(s).
      *
      * @see https://platform.openai.com/docs/api-reference/images/create-variation
      *
@@ -128,7 +128,7 @@ class OpenAIImages extends OpenAI
     }
 
     /**
-     * Instructs OpenAI to generate an image / some image variations from a given image, returning Base64 encoded image(s).
+     * Generates a number of image variations and returns Base64 encoded image(s).
      *
      * @see https://platform.openai.com/docs/api-reference/images/create-variation
      *
@@ -165,7 +165,7 @@ class OpenAIImages extends OpenAI
     }
 
     /**
-     * Instructs OpenAI to generate an image / some image variations from a given image.
+     * Generates a number of image variations from a given image.
      *
      * @see https://platform.openai.com/docs/api-reference/images/create-variation
      *
@@ -198,7 +198,7 @@ class OpenAIImages extends OpenAI
     }
 
     /**
-     * Instructs OpenAI to generate an image / some image edits from a given image, returning URL(s).
+     * Generates a number of image edits and returns URL(s).
      *
      * @see https://platform.openai.com/docs/api-reference/images/create-edit
      *
@@ -237,7 +237,7 @@ class OpenAIImages extends OpenAI
     }
 
     /**
-     * Instructs OpenAI to generate an image / some image edits from a given image, returning Base64 encoded image(s).
+     * Generates a number of image edits and returns Base64 encoded image(s).
      *
      * @see https://platform.openai.com/docs/api-reference/images/create-edit
      *
@@ -276,7 +276,7 @@ class OpenAIImages extends OpenAI
     }
 
     /**
-     * Instructs OpenAI to generate an image / some image edits from a given image.
+     * Generates a number of image edits from a given image.
      *
      * @see https://platform.openai.com/docs/api-reference/images/create-edit
      *
