@@ -65,11 +65,9 @@ class OpenAI
         if ($method == 'GET') {
             // GET request parameters are included in the query string.
             $options['query'] = $parameters;
-        }
-        else if ($method == 'multipart') {
+        } else if ($method == 'multipart') {
             $options['multipart'] = $parameters;
-        }
-        else {
+        } else {
             // POST parameters are included in the request body as JSON.
             $options['json'] = (object) $parameters;
         }
