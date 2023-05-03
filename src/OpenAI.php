@@ -80,7 +80,14 @@ class OpenAI
             return $data;
         }
         catch (RequestException $e) {
-            throw new OpenAIException($e->getMessage(), $e->getCode(), $e);
+            if ($e->hasResponse()) {
+                $response = $e->getResponse();
+                $body = json_decode($response->getBody());
+                throw new OpenAIException($body->error->message, $response->getStatusCode(), $e);
+            }
+            else {
+                throw new OpenAIException($e->getMessage(), $e->getCode(), $e);
+            }
         }
     }
 }
