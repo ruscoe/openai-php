@@ -27,6 +27,11 @@ class OpenAI
     protected $api_key;
 
     /**
+     * The organization to use.
+     */
+    protected $organization;
+
+    /**
      * The HTTP client.
      */
     protected $client;
@@ -36,9 +41,10 @@ class OpenAI
      * 
      * @param string $api_key the API key to use
      */
-    public function __construct($api_key)
+    public function __construct($api_key, $organization = null)
     {
         $this->api_key = $api_key;
+        $this->organization = $organization;
 
         $this->client = new Client();
     }
@@ -57,9 +63,16 @@ class OpenAI
      */
     public function request($method, $path, $parameters = [])
     {
+        // Set up authentication.
+        $headers = ['Authorization' => 'Bearer ' . $this->api_key];
+
+        // Set up optional organization.
+        if ($this->organization !== null) {
+            $headers['OpenAI-Organization'] = $this->organization;
+        }
+
         $options = [
-            // Set up authentication.
-            'headers' => ['Authorization' => 'Bearer ' . $this->api_key],
+            'headers' => $headers,
         ];
 
         if ($method == 'GET') {
