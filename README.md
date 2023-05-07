@@ -49,6 +49,13 @@
 
 ## Usage examples
 
+The following examples assume you store your API key in an environment variable.
+To do this on a Linux or MacOS system, run:
+
+`export OPENAI_API_KEY=sk-XA0yN...`
+
+Be sure to substitute your own API key after `OPENAI_API_KEY=`.
+
 ### Completions
 
 This example asks the `text-davinci-003` model to describe a keyboard.
@@ -61,7 +68,7 @@ tokens so a reasonable length description can be returned.
 require __DIR__ . '/vendor/autoload.php';
 
 // @see https://platform.openai.com/docs/api-reference/authentication
-$api_key = 'YOUR API KEY';
+$api_key = getenv('OPENAI_API_KEY');
 
 $api = new OpenAI\OpenAICompletions($api_key);
 
@@ -104,7 +111,7 @@ This example sends a simple chat message.
 require __DIR__ . '/vendor/autoload.php';
 
 // @see https://platform.openai.com/docs/api-reference/authentication
-$api_key = 'YOUR API KEY';
+$api_key = getenv('OPENAI_API_KEY');
 
 $api = new OpenAI\OpenAIChat($api_key);
 
@@ -149,7 +156,7 @@ This example asks for two images of a red six-sided dice in water.
 require __DIR__ . '/vendor/autoload.php';
 
 // @see https://platform.openai.com/docs/api-reference/authentication
-$api_key = 'YOUR API KEY';
+$api_key = getenv('OPENAI_API_KEY');
 
 $api = new OpenAI\OpenAIImages($api_key);
 
@@ -169,7 +176,7 @@ The response
 require __DIR__ . '/vendor/autoload.php';
 
 // @see https://platform.openai.com/docs/api-reference/authentication
-$api_key = 'YOUR API KEY';
+$api_key = getenv('OPENAI_API_KEY');
 
 $api = new OpenAI\OpenAIImages($api_key);
 
@@ -189,7 +196,7 @@ The source and response
 require __DIR__ . '/vendor/autoload.php';
 
 // @see https://platform.openai.com/docs/api-reference/authentication
-$api_key = 'YOUR API KEY';
+$api_key = getenv('OPENAI_API_KEY');
 
 $api = new OpenAI\OpenAIImages($api_key);
 
