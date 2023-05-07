@@ -1,5 +1,7 @@
 # PHP library for the OpenAI API
 
+An unofficial library for OpenAI's API.
+
 ## Supported methods
 
 ### Models
