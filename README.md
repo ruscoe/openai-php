@@ -58,7 +58,7 @@ tokens so a reasonable length description can be returned.
 ```php
 <?php
 
-require 'PATH TO LIBRARY/vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
 // @see https://platform.openai.com/docs/api-reference/authentication
 $api_key = 'YOUR API KEY';
@@ -101,7 +101,7 @@ This example sends a simple chat message.
 ```php
 <?php
 
-require 'PATH TO LIBRARY/vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
 // @see https://platform.openai.com/docs/api-reference/authentication
 $api_key = 'YOUR API KEY';
@@ -146,7 +146,7 @@ This example asks for two images of a red six-sided dice in water.
 ```php
 <?php
 
-require 'PATH TO LIBRARY/vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
 // @see https://platform.openai.com/docs/api-reference/authentication
 $api_key = 'YOUR API KEY';
@@ -166,7 +166,7 @@ The response
 ```php
 <?php
 
-require 'PATH TO LIBRARY/vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
 // @see https://platform.openai.com/docs/api-reference/authentication
 $api_key = 'YOUR API KEY';
@@ -186,7 +186,7 @@ The source and response
 ```php
 <?php
 
-require 'PATH TO LIBRARY/vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
 // @see https://platform.openai.com/docs/api-reference/authentication
 $api_key = 'YOUR API KEY';
