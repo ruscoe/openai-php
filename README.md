@@ -7,7 +7,7 @@ An unofficial library for OpenAI's API.
 ### Models
 
 * `/models` - get a list of OpenAI models
-* `/models/{model}` - get a specific openAI model
+* `/models/{model}` - get a specific OpenAI model
 
 ### Completions
 
