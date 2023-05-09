@@ -27,6 +27,10 @@ An unofficial library for OpenAI's API.
 * `/images/variations` - create image variations
 * `/images/edits` - create image edits
 
+### Embeddings
+
+* `/embeddings` - create an embedding vector for a given input
+
 ### Audio
 
 * `/audio/transcriptions` - transcribe audio
