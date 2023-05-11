@@ -56,12 +56,13 @@ class OpenAI
      *                           GET, POST or multipart
      * @param string $path       the API path to request
      * @param array  $parameters parameters to send with the request
+     * @param array  $options    HTTP request options to send to Guzzle
      *
      * @return mixed
      *
      * @throws OpenAIException
      */
-    public function request($method, $path, $parameters = [])
+    public function request($method, $path, $parameters = [], $options = [])
     {
         // Set up authentication.
         $headers = ['Authorization' => 'Bearer ' . $this->api_key];
@@ -71,26 +72,27 @@ class OpenAI
             $headers['OpenAI-Organization'] = $this->organization;
         }
 
-        $options = [
-            'headers' => $headers,
-        ];
+        $options['headers'] = $headers;
 
-        if ($method == 'GET') {
-            // GET request parameters are included in the query string.
-            $options['query'] = $parameters;
+        if ($method == 'POST') {
+            // POST parameters are included in the request body as JSON.
+            $options['json'] = (object) $parameters;
         } else if ($method == 'multipart') {
             $options['multipart'] = $parameters;
         } else {
-            // POST parameters are included in the request body as JSON.
-            $options['json'] = (object) $parameters;
+            // Request parameters are included in the query string for other methods.
+            $options['query'] = $parameters;
         }
   
         try {
             $url = $this->endpoint.$path;
             $response = $this->client->request(($method == 'multipart') ? 'POST' : $method, $url, $options);
-            $data = json_decode($response->getBody());
-  
-            return $data;
+
+            if (isset($options['stream'])) {
+                return $response->getBody()->getContents();
+            } else {
+                return json_decode($response->getBody());
+            }
         }
         catch (RequestException $e) {
             if ($e->hasResponse()) {
