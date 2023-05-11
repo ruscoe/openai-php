@@ -2,6 +2,8 @@
 
 An unofficial library for OpenAI's API.
 
+![release](https://img.shields.io/github/v/release/ruscoe/openai-php)
+
 ## Requirements
 
 * PHP 5.4.0 or above
