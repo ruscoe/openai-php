@@ -2,42 +2,73 @@
 
 An unofficial library for OpenAI's API.
 
-## Supported methods
+## Available functions
 
 ### Models
 
-* `/models` - get a list of OpenAI models
-* `/models/{model}` - get a specific OpenAI model
+| Class             | Function                | Description                                                                 |
+|-------------------|-------------------------|-----------------------------------------------------------------------------|
+| OpenAIModels      | getModels               | Gets available OpenAI models.                                               |
+| OpenAIModels      | getModel                | Gets a specific OpenAI model.                                               |
 
 ### Completions
 
-* `/completions` - create a new completion
+| Class             | Function                | Description                                                                 |
+|-------------------|-------------------------|-----------------------------------------------------------------------------|
+| OpenAICompletions | create                  | Creates one or more completions from a given input.                         |
 
 ### Chat
 
-* `/chat/completions` - create a new chat completion
+| Class             | Function                | Description                                                                 |
+|-------------------|-------------------------|-----------------------------------------------------------------------------|
+| OpenAIChat        | create                  | Creates one or more completions from a chat conversation.                   |
 
 ### Edits
 
-* `/edits` - create an edit for a given input
+| Class             | Function                | Description                                                                 |
+|-------------------|-------------------------|-----------------------------------------------------------------------------|
+| OpenAIEdits       | create                  | Performs an edit on a given input.                                          |
 
 ### Images
 
-* `/images/generations` - create images
-* `/images/variations` - create image variations
-* `/images/edits` - create image edits
+| Class             | Function                | Description                                                                 |
+|-------------------|-------------------------|-----------------------------------------------------------------------------|
+| OpenAIImages      | createAsURL             | Generates a number of images and returns URLs.                              |
+| OpenAIImages      | createAsBase64          | Generates a number of images and returns Base64 encoded image(s).           |
+| OpenAIImages      | createVariationAsURL    | Generates a number of image variations and returns URL(s).                  |
+| OpenAIImages      | createVariationAsBase64 | Generates a number of image variations and returns Base64 encoded image(s). |
+| OpenAIImages      | createVariation         | Generates a number of image variations from a given image.                  |
+| OpenAIImages      | createEditAsURL         | Generates a number of image edits and returns URL(s).                       |
+| OpenAIImages      | createEditAsBase64      | Generates a number of image edits and returns Base64 encoded image(s).      |
+| OpenAIImages      | createEdit              | Generates a number of image edits from a given image.                       |
 
 ### Embeddings
 
-* `/embeddings` - create an embedding vector for a given input
+| Class             | Function                | Description                                                                 |
+|-------------------|-------------------------|-----------------------------------------------------------------------------|
+| OpenAIEmbeddings  | create                  | Creates an embedding vector from given input.                               |
 
 ### Audio
 
-* `/audio/transcriptions` - transcribe audio
+| Class             | Function                | Description                                                                 |
+|-------------------|-------------------------|-----------------------------------------------------------------------------|
+| OpenAIAudio       | transcribe              | Transcribes text from an audio file.                                        |
+
+### Files
+
+| Class             | Function                | Description                                                                 |
+|-------------------|-------------------------|-----------------------------------------------------------------------------|
+| OpenAIFiles       | getFiles                | Gets files owned by the user's organization.                                |
+| OpenAIFiles       | uploadFile              | Uploads a file.                                                             |
+| OpenAIFiles       | deleteFile              | Deletes a file.                                                             |
+| OpenAIFiles       | getFile                 | Gets information about a file.                                              |
+| OpenAIFiles       | getFileContent          | Gets the content of a file.                                                 |
 
 ### Moderations
 
-* `/moderations` - request a moderation check
+| Class             | Function                | Description                                                                 |
+|-------------------|-------------------------|-----------------------------------------------------------------------------|
+| OpenAIModerations | create                  | Requests a moderation result from OpenAI.                                   |
 
 ## Requirements
 
