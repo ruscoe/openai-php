@@ -2,74 +2,6 @@
 
 An unofficial library for OpenAI's API.
 
-## Available functions
-
-### Models
-
-| Class             | Function                | Description                                                                 |
-|-------------------|-------------------------|-----------------------------------------------------------------------------|
-| OpenAIModels      | getModels               | Gets available OpenAI models.                                               |
-| OpenAIModels      | getModel                | Gets a specific OpenAI model.                                               |
-
-### Completions
-
-| Class             | Function                | Description                                                                 |
-|-------------------|-------------------------|-----------------------------------------------------------------------------|
-| OpenAICompletions | create                  | Creates one or more completions from a given input.                         |
-
-### Chat
-
-| Class             | Function                | Description                                                                 |
-|-------------------|-------------------------|-----------------------------------------------------------------------------|
-| OpenAIChat        | create                  | Creates one or more completions from a chat conversation.                   |
-
-### Edits
-
-| Class             | Function                | Description                                                                 |
-|-------------------|-------------------------|-----------------------------------------------------------------------------|
-| OpenAIEdits       | create                  | Performs an edit on a given input.                                          |
-
-### Images
-
-| Class             | Function                | Description                                                                 |
-|-------------------|-------------------------|-----------------------------------------------------------------------------|
-| OpenAIImages      | createAsURL             | Generates a number of images and returns URLs.                              |
-| OpenAIImages      | createAsBase64          | Generates a number of images and returns Base64 encoded image(s).           |
-| OpenAIImages      | createVariationAsURL    | Generates a number of image variations and returns URL(s).                  |
-| OpenAIImages      | createVariationAsBase64 | Generates a number of image variations and returns Base64 encoded image(s). |
-| OpenAIImages      | createVariation         | Generates a number of image variations from a given image.                  |
-| OpenAIImages      | createEditAsURL         | Generates a number of image edits and returns URL(s).                       |
-| OpenAIImages      | createEditAsBase64      | Generates a number of image edits and returns Base64 encoded image(s).      |
-| OpenAIImages      | createEdit              | Generates a number of image edits from a given image.                       |
-
-### Embeddings
-
-| Class             | Function                | Description                                                                 |
-|-------------------|-------------------------|-----------------------------------------------------------------------------|
-| OpenAIEmbeddings  | create                  | Creates an embedding vector from given input.                               |
-
-### Audio
-
-| Class             | Function                | Description                                                                 |
-|-------------------|-------------------------|-----------------------------------------------------------------------------|
-| OpenAIAudio       | transcribe              | Transcribes text from an audio file.                                        |
-
-### Files
-
-| Class             | Function                | Description                                                                 |
-|-------------------|-------------------------|-----------------------------------------------------------------------------|
-| OpenAIFiles       | getFiles                | Gets files owned by the user's organization.                                |
-| OpenAIFiles       | uploadFile              | Uploads a file.                                                             |
-| OpenAIFiles       | deleteFile              | Deletes a file.                                                             |
-| OpenAIFiles       | getFile                 | Gets information about a file.                                              |
-| OpenAIFiles       | getFileContent          | Gets the content of a file.                                                 |
-
-### Moderations
-
-| Class             | Function                | Description                                                                 |
-|-------------------|-------------------------|-----------------------------------------------------------------------------|
-| OpenAIModerations | create                  | Requests a moderation result from OpenAI.                                   |
-
 ## Requirements
 
 * PHP 5.4.0 or above
@@ -284,6 +216,74 @@ The source and response
 ![edit](https://user-images.githubusercontent.com/87952/234949655-8d055b40-e668-4e38-8c35-e6823c4fa047.png)
 ![edit_mask](https://user-images.githubusercontent.com/87952/234949679-624f6ee2-1e15-487a-9332-3bad136343ca.png)
 ![edit1](https://user-images.githubusercontent.com/87952/234949702-566aa1d7-f7c1-4788-b1c7-8b2b7bbcf468.png)
+
+## Available functions
+
+### Models
+
+| Class             | Function                | Description                                                                 |
+|-------------------|-------------------------|-----------------------------------------------------------------------------|
+| OpenAIModels      | getModels               | Gets available OpenAI models.                                               |
+| OpenAIModels      | getModel                | Gets a specific OpenAI model.                                               |
+
+### Completions
+
+| Class             | Function                | Description                                                                 |
+|-------------------|-------------------------|-----------------------------------------------------------------------------|
+| OpenAICompletions | create                  | Creates one or more completions from a given input.                         |
+
+### Chat
+
+| Class             | Function                | Description                                                                 |
+|-------------------|-------------------------|-----------------------------------------------------------------------------|
+| OpenAIChat        | create                  | Creates one or more completions from a chat conversation.                   |
+
+### Edits
+
+| Class             | Function                | Description                                                                 |
+|-------------------|-------------------------|-----------------------------------------------------------------------------|
+| OpenAIEdits       | create                  | Performs an edit on a given input.                                          |
+
+### Images
+
+| Class             | Function                | Description                                                                 |
+|-------------------|-------------------------|-----------------------------------------------------------------------------|
+| OpenAIImages      | createAsURL             | Generates a number of images and returns URLs.                              |
+| OpenAIImages      | createAsBase64          | Generates a number of images and returns Base64 encoded image(s).           |
+| OpenAIImages      | createVariationAsURL    | Generates a number of image variations and returns URL(s).                  |
+| OpenAIImages      | createVariationAsBase64 | Generates a number of image variations and returns Base64 encoded image(s). |
+| OpenAIImages      | createVariation         | Generates a number of image variations from a given image.                  |
+| OpenAIImages      | createEditAsURL         | Generates a number of image edits and returns URL(s).                       |
+| OpenAIImages      | createEditAsBase64      | Generates a number of image edits and returns Base64 encoded image(s).      |
+| OpenAIImages      | createEdit              | Generates a number of image edits from a given image.                       |
+
+### Embeddings
+
+| Class             | Function                | Description                                                                 |
+|-------------------|-------------------------|-----------------------------------------------------------------------------|
+| OpenAIEmbeddings  | create                  | Creates an embedding vector from given input.                               |
+
+### Audio
+
+| Class             | Function                | Description                                                                 |
+|-------------------|-------------------------|-----------------------------------------------------------------------------|
+| OpenAIAudio       | transcribe              | Transcribes text from an audio file.                                        |
+
+### Files
+
+| Class             | Function                | Description                                                                 |
+|-------------------|-------------------------|-----------------------------------------------------------------------------|
+| OpenAIFiles       | getFiles                | Gets files owned by the user's organization.                                |
+| OpenAIFiles       | uploadFile              | Uploads a file.                                                             |
+| OpenAIFiles       | deleteFile              | Deletes a file.                                                             |
+| OpenAIFiles       | getFile                 | Gets information about a file.                                              |
+| OpenAIFiles       | getFileContent          | Gets the content of a file.                                                 |
+
+### Moderations
+
+| Class             | Function                | Description                                                                 |
+|-------------------|-------------------------|-----------------------------------------------------------------------------|
+| OpenAIModerations | create                  | Requests a moderation result from OpenAI.                                   |
 
 ## License
 
