@@ -22,7 +22,7 @@ class OpenAIEdits extends OpenAI
      * @param string $instruction a description of how the model perform the edit
      * @param array  $parameters  optional array of parameters to use
      *
-     * @return object the edit object
+     * @return object
      *
      * @see https://platform.openai.com/docs/api-reference/edits/create
      * @see https://platform.openai.com/docs/models/model-endpoint-compatibility

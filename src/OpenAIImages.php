@@ -170,7 +170,7 @@ class OpenAIImages extends OpenAI
      * @param string $image      the path to the image file
      * @param array  $parameters optional array of parameters to use
      *
-     * @return object the image variation response object
+     * @return object
      *
      * @see https://platform.openai.com/docs/api-reference/images/create-variation
      */
@@ -192,9 +192,7 @@ class OpenAIImages extends OpenAI
             ];
         }
 
-        $response = $this->request('multipart', '/images/variations', $multipart);
-
-        return $response;
+        return $this->request('multipart', '/images/variations', $multipart);
     }
 
     /**
@@ -283,7 +281,7 @@ class OpenAIImages extends OpenAI
      * @param string $mask       the path to the mask image file
      * @param array  $parameters optional array of parameters to use
      *
-     * @return object the image edit response object
+     * @return object
      *
      * @see https://platform.openai.com/docs/api-reference/images/create-edit
      */
@@ -315,8 +313,6 @@ class OpenAIImages extends OpenAI
             ];
         }
 
-        $response = $this->request('multipart', '/images/edits', $multipart);
-
-        return $response;
+        return $this->request('multipart', '/images/edits', $multipart);
     }
 }

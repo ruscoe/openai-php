@@ -24,7 +24,7 @@ class OpenAIChat extends OpenAI
      *                           [{'role': 'user', 'content': 'Hello, friend!'}]
      * @param array  $parameters optional array of parameters to use
      *
-     * @return array array of completion objects
+     * @return object
      *
      * @see https://platform.openai.com/docs/api-reference/chat/create
      * @see https://platform.openai.com/docs/models/model-endpoint-compatibility
@@ -35,8 +35,6 @@ class OpenAIChat extends OpenAI
         $parameters['model'] = $model;
         $parameters['messages'] = $messages;
 
-        $response = $this->request('POST', '/chat/completions', $parameters);
-
-        return (isset($response->choices)) ? $response->choices : null;
+        return $this->request('POST', '/chat/completions', $parameters);
     }
 }

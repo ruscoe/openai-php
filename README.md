@@ -79,7 +79,7 @@ $api_key = getenv('OPENAI_API_KEY');
 $api = new OpenAI\OpenAICompletions($api_key);
 
 $parameters = [
-    'max_tokens' => 64,
+    'max_tokens' => 128,
 ];
 
 $response = $api->create('text-davinci-003', 'Describe a keyboard', 1, $parameters);
@@ -89,22 +89,41 @@ var_dump($response);
 
 The response:
 ```
-array(1) {
-  [0]=>
-  object(stdClass)#32 (4) {
-    ["text"]=>
-    string(282) "
+object(stdClass)#34 (6) {
+  ["id"]=>
+  string(34) "cmpl-7EqnVAO0xpxtWkDepi2s64AG7UAbU"
+  ["object"]=>
+  string(15) "text_completion"
+  ["created"]=>
+  int(1683773901)
+  ["model"]=>
+  string(16) "text-davinci-003"
+  ["choices"]=>
+  array(1) {
+    [0]=>
+    object(stdClass)#32 (4) {
+      ["text"]=>
+      string(663) "
 
-A keyboard is a peripheral device that can be connected to a computer to provide an easier way to enter data. A standard keyboard usually consists of alphanumeric keys which can be used to type words and numbers, as well as a number of special keys for performing various functions."
-    ["index"]=>
-    int(0)
-    ["logprobs"]=>
-    NULL
-    ["finish_reason"]=>
-    string(6) "length"
+A keyboard is a computer peripheral device used for entering data and commands into a computer or other device. It consists of a keypad, usually a set of standard-sized keys corresponding to letters, numbers, symbols, and/or functionality, which can be powered by various means including electricity, batteries, or solar cells. It generally has several special-function keys that can be used to control program functions, such as volume or brightness levels. Modern keyboards often include multimedia hotkeys, and are typically back-lit in order to make typing in the dark easier. Some keyboards may include a palm rest to help reduce fatigue caused by extended"
+      ["index"]=>
+      int(0)
+      ["logprobs"]=>
+      NULL
+      ["finish_reason"]=>
+      string(6) "length"
+    }
+  }
+  ["usage"]=>
+  object(stdClass)#18 (3) {
+    ["prompt_tokens"]=>
+    int(4)
+    ["completion_tokens"]=>
+    int(128)
+    ["total_tokens"]=>
+    int(132)
   }
 }
-
 ```
 
 ### Chat
@@ -132,20 +151,40 @@ var_dump($response);
 
 The response:
 ```
-array(1) {
-  [0]=>
-  object(stdClass)#29 (3) {
-    ["message"]=>
-    object(stdClass)#19 (2) {
-      ["role"]=>
-      string(9) "assistant"
-      ["content"]=>
-      string(38) "Hello there! How can I help you today?"
+object(stdClass)#35 (6) {
+  ["id"]=>
+  string(38) "chatcmpl-7EqphlIJngrqxGAiDdtV9JMu89NhQ"
+  ["object"]=>
+  string(15) "chat.completion"
+  ["created"]=>
+  int(1683774037)
+  ["model"]=>
+  string(18) "gpt-3.5-turbo-0301"
+  ["usage"]=>
+  object(stdClass)#33 (3) {
+    ["prompt_tokens"]=>
+    int(12)
+    ["completion_tokens"]=>
+    int(10)
+    ["total_tokens"]=>
+    int(22)
+  }
+  ["choices"]=>
+  array(1) {
+    [0]=>
+    object(stdClass)#29 (3) {
+      ["message"]=>
+      object(stdClass)#19 (2) {
+        ["role"]=>
+        string(9) "assistant"
+        ["content"]=>
+        string(40) "Hello there, how may I assist you today?"
+      }
+      ["finish_reason"]=>
+      string(4) "stop"
+      ["index"]=>
+      int(0)
     }
-    ["finish_reason"]=>
-    string(4) "stop"
-    ["index"]=>
-    int(0)
   }
 }
 ```

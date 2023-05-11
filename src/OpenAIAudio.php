@@ -23,7 +23,7 @@ class OpenAIAudio extends OpenAI
      *                           may be used
      * @param array  $parameters optional array of parameters to use
      *
-     * @return string the transcribed text
+     * @return object
      *
      * @see https://platform.openai.com/docs/api-reference/audio/create
      */
@@ -49,10 +49,6 @@ class OpenAIAudio extends OpenAI
             ];
         }
 
-        $response = $this->request('multipart', '/audio/transcriptions', $multipart);
-
-        return (isset($response->text)) ? $response->text : null;
-
-        return $response;
+        return $this->request('multipart', '/audio/transcriptions', $multipart);
     }
 }

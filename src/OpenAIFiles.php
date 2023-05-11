@@ -17,15 +17,13 @@ class OpenAIFiles extends OpenAI
     /**
      * Gets files owned by the user's organization.
      * 
-     * @return array an array of file objects
+     * @return object
      *
      * @see https://platform.openai.com/docs/api-reference/files/list
      */
     public function getFiles()
     {
-        $response = $this->request('GET', '/files');
-
-        return (isset($response->data)) ? $response->data : null;
+        return $this->request('GET', '/files');
     }
 
     /**
@@ -37,7 +35,7 @@ class OpenAIFiles extends OpenAI
      *                           tuning files
      * @param array  $parameters optional array of parameters to use
      *
-     * @return object the file object
+     * @return object
      *
      * @see https://platform.openai.com/docs/api-reference/files/upload
      */
@@ -63,9 +61,7 @@ class OpenAIFiles extends OpenAI
             ];
         }
 
-        $response = $this->request('multipart', '/files', $multipart);
-
-        return $response;
+        return $this->request('multipart', '/files', $multipart);
     }
 
     /**
@@ -73,15 +69,13 @@ class OpenAIFiles extends OpenAI
      *
      * @param string $file_id the ID of the file
      *
-     * @return bool true if the file was deleted
+     * @return object
      *
      * @see https://platform.openai.com/docs/api-reference/files/delete
      */
     public function deleteFile($file_id)
     {
-        $response = $this->request('DELETE', '/files/'.$file_id);
-
-        return $response->deleted;
+        return $this->request('DELETE', '/files/'.$file_id);
     }
 
     /**
@@ -89,7 +83,7 @@ class OpenAIFiles extends OpenAI
      *
      * @param string $file_id the ID of the file
      *
-     * @return object the file object
+     * @return object
      *
      * @see https://platform.openai.com/docs/api-reference/files/retrieve
      */

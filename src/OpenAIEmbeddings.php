@@ -23,7 +23,7 @@ class OpenAIEmbeddings extends OpenAI
      *                           (string or array of strings)
      * @param array  $parameters optional array of parameters to use
      *
-     * @return array array of embedding vector objects
+     * @return object
      *
      * @see https://platform.openai.com/docs/api-reference/embeddings/create
      * @see https://platform.openai.com/docs/models/model-endpoint-compatibility
@@ -34,8 +34,6 @@ class OpenAIEmbeddings extends OpenAI
         $parameters['model'] = $model;
         $parameters['input'] = $input;
 
-        $response = $this->request('POST', '/embeddings', $parameters);
-
-        return (isset($response->data)) ? $response->data : null;
+        return $this->request('POST', '/embeddings', $parameters);
     }
 }

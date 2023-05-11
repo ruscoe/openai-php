@@ -19,7 +19,7 @@ class OpenAIModerations extends OpenAI
      *                          (string or array)
      * @param array $parameters optional array of parameters to use
      *
-     * @return array array of moderation result objects
+     * @return object
      *
      * @see https://platform.openai.com/docs/api-reference/moderations/create
      */
@@ -28,8 +28,6 @@ class OpenAIModerations extends OpenAI
         // Add required parameters.
         $parameters['input'] = $input;
 
-        $response = $this->request('POST', '/moderations', $parameters);
-
-        return (isset($response->results)) ? $response->results : null;
+        return $this->request('POST', '/moderations', $parameters);
     }
 }
