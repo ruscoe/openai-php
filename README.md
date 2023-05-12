@@ -276,11 +276,22 @@ $models = $api->getModels();
 var_dump($models);
 ```
 
-The model name will start with `curie:ft-` and end with the current date and time.
+The model name will start with `curie:ft` and end with the current date and time.
 
 Create a new completion using your fine-tuned model.
 
-TODO
+```php
+$response = $api->create('curie:ft...', 'dog =', 1, $parameters);
+```
+
+The response should include "animal".
+
+```php
+$response = $api->create('curie:ft...', 'marble =', 1, $parameters);
+```
+
+The response should include "rock".
+
 
 ## Available functions
 
