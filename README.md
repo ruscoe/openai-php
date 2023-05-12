@@ -281,12 +281,16 @@ The model name will start with `curie:ft` and end with the current date and time
 Create a new completion using your fine-tuned model.
 
 ```php
+$api = new OpenAI\OpenAICompletions($api_key);
+
 $response = $api->create('curie:ft...', 'dog =', 1, $parameters);
 ```
 
 The response should include "animal".
 
 ```php
+$api = new OpenAI\OpenAICompletions($api_key);
+
 $response = $api->create('curie:ft...', 'marble =', 1, $parameters);
 ```
 
