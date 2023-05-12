@@ -219,6 +219,69 @@ The source and response
 ![edit_mask](https://user-images.githubusercontent.com/87952/234949679-624f6ee2-1e15-487a-9332-3bad136343ca.png)
 ![edit1](https://user-images.githubusercontent.com/87952/234949702-566aa1d7-f7c1-4788-b1c7-8b2b7bbcf468.png)
 
+## Fine-tuning a model
+
+First, take a look at the [official documentation on fine-tuning](https://platform.openai.com/docs/guides/fine-tuning).
+
+Create and upload your training file. Example:
+
+**training.jsonl**
+```
+{"prompt": "bird =", "completion": " animal"}
+{"prompt": "dog =", "completion": " animal"}
+{"prompt": "cat =", "completion": " animal"}
+{"prompt": "limestone =", "completion": " rock"}
+{"prompt": "shale =", "completion": " rock"}
+{"prompt": "marble =", "completion": " rock"}
+```
+
+```php
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+// @see https://platform.openai.com/docs/api-reference/authentication
+$api_key = getenv('OPENAI_API_KEY');
+
+$api = new OpenAI\OpenAIFiles($api_key);
+
+$file = $api->uploadFile('training.jsonl');
+```
+
+List your files to get the file ID:
+
+```php
+$api = new OpenAI\OpenAIFiles($api_key);
+
+$files = $api->getFiles();
+
+var_dump($files);
+```
+
+Create a new training job using the file ID you've obtained:
+
+```php
+$api = new OpenAI\OpenAIFineTunes($api_key);
+
+$api->create('file-1CO...');
+```
+
+List models to get the name of your new fine-tuned model:
+
+```php
+$api = new OpenAI\OpenAIModels($api_key);
+
+$models = $api->getModels();
+
+var_dump($models);
+```
+
+The model name will start with `curie:ft-` and end with the current date and time.
+
+Create a new completion using your fine-tuned model.
+
+TODO
+
 ## Available functions
 
 ### Models
