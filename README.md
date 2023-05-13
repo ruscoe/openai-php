@@ -359,6 +359,16 @@ The response should include "rock".
 | OpenAIFiles       | getFile                 | Gets information about a file.                                              |
 | OpenAIFiles       | getFileContent          | Gets the content of a file.                                                 |
 
+### Fine-Tunes
+
+| Class             | Function                | Description                                                                 |
+|-------------------|-------------------------|-----------------------------------------------------------------------------|
+| OpenAIFineTunes   | create                  | Creates a fine-tune job.                                                    |
+| OpenAIFineTunes   | getFineTunes            | Gets existing fine-tunes.                                                   |
+| OpenAIFineTunes   | cancelFineTune          | Cancels a fine-tune job.                                                    |
+| OpenAIFineTunes   | getFineTuneEvents       | Gets status updates of a fine-tune job.                                     |
+| OpenAIFineTunes   | deleteModel             | Deletes a fine-tuned model.                                                 |
+
 ### Moderations
 
 | Class             | Function                | Description                                                                 |
