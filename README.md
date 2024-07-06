@@ -29,7 +29,7 @@ Be sure to substitute your own API key after `OPENAI_API_KEY=`.
 
 ### Completions
 
-This example asks the `text-davinci-003` model to describe a keyboard.
+This example asks the `gpt-3.5-turbo` model to describe a keyboard.
 It instructs the OpenAI API to use more than the default number of
 tokens so a reasonable length description can be returned.
 
@@ -47,7 +47,7 @@ $parameters = [
     'max_tokens' => 128,
 ];
 
-$response = $api->create('text-davinci-003', 'Describe a keyboard', 1, $parameters);
+$response = $api->create('gpt-3.5-turbo', 'Describe a keyboard', 1, $parameters);
 
 var_dump($response);
 ```
@@ -62,7 +62,7 @@ object(stdClass)#34 (6) {
   ["created"]=>
   int(1683773901)
   ["model"]=>
-  string(16) "text-davinci-003"
+  string(16) "gpt-3.5-turbo"
   ["choices"]=>
   array(1) {
     [0]=>
