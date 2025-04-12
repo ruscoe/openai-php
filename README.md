@@ -224,7 +224,7 @@ object(stdClass)#35 (8) {
 
 **Create image**
 
-This example asks for two images of a red six-sided dice in water.
+This example asks for two images of a jungle waterfall.
 
 ```php
 <?php
@@ -236,7 +236,9 @@ $api_key = getenv('OPENAI_API_KEY');
 
 $api = new OpenAI\OpenAIImages($api_key);
 
-$response = $api->createAsURL('A red six-sided dice in water', 2, '256x256');
+$response = $api->createAsURL('A jungle waterfall', 2, '256x256');
+
+var_dump($response);
 ```
 
 The response
