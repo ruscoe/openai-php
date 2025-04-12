@@ -29,7 +29,7 @@ Be sure to substitute your own API key after `OPENAI_API_KEY=`.
 
 ### Completions
 
-This example asks the `gpt-3.5-turbo` model to describe a keyboard.
+This example asks the `gpt-4o` model to describe a keyboard.
 It instructs the OpenAI API to use more than the default number of
 tokens so a reasonable length description can be returned.
 
