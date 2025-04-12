@@ -281,6 +281,8 @@ $api_key = getenv('OPENAI_API_KEY');
 $api = new OpenAI\OpenAIImages($api_key);
 
 $response = $api->createEditAsURL('edit.png', 'a duck driving a car', 'edit_mask.png', 1, '256x256');
+
+var_dump($response);
 ```
 
 The source and response
