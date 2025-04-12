@@ -17,7 +17,7 @@ class OpenAICompletions extends OpenAI
      *
      * @param string $model      the model ID to use when creating the completion
      *                           Example:
-     *                           text-davinci-003
+     *                           gpt-4o
      *                           Check model compatibility for valid models
      * @param mixed  $prompt     optional prompt(s) to generate a completion for
      *                           (string or array)
@@ -29,13 +29,13 @@ class OpenAICompletions extends OpenAI
      * @see https://platform.openai.com/docs/api-reference/completions/create
      * @see https://platform.openai.com/docs/models/model-endpoint-compatibility
      */
-    public function create($model, $prompt = null, $number = 1, $parameters = [])
+    public function create($model, $messages = null, $number = 1, $parameters = [])
     {
         // Add required parameters.
         $parameters['model'] = $model;
-        $parameters['prompt'] = $prompt;
+        $parameters['messages'] = $messages;
         $parameters['n'] = $number;
 
-        return $this->request('POST', '/completions', $parameters);
+        return $this->request('POST', '/chat/completions', $parameters);
     }
 }

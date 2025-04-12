@@ -44,35 +44,52 @@ $api_key = getenv('OPENAI_API_KEY');
 $api = new OpenAI\OpenAICompletions($api_key);
 
 $parameters = [
-    'max_tokens' => 128,
+    'max_completion_tokens' => 128,
 ];
 
-$response = $api->create('gpt-3.5-turbo', 'Describe a keyboard', 1, $parameters);
+$messages = [
+    (object) ['role' => 'user', 'content' => 'Describe a keyboard']
+];
+
+$response = $api->create('gpt-4o', $messages, 1, $parameters);
 
 var_dump($response);
 ```
 
 The response:
 ```
-object(stdClass)#34 (6) {
+object(stdClass)#35 (8) {
   ["id"]=>
-  string(34) "cmpl-7EqnVAO0xpxtWkDepi2s64AG7UAbU"
+  string(38) "chatcmpl-BLXYoMfybsQQjP1xlKjUtEL6chvHE"
   ["object"]=>
-  string(15) "text_completion"
+  string(15) "chat.completion"
   ["created"]=>
-  int(1683773901)
+  int(1744473594)
   ["model"]=>
-  string(16) "gpt-3.5-turbo"
+  string(17) "gpt-4o-2024-08-06"
   ["choices"]=>
   array(1) {
     [0]=>
-    object(stdClass)#32 (4) {
-      ["text"]=>
-      string(663) "
-
-A keyboard is a computer peripheral device used for entering data and commands into a computer or other device. It consists of a keypad, usually a set of standard-sized keys corresponding to letters, numbers, symbols, and/or functionality, which can be powered by various means including electricity, batteries, or solar cells. It generally has several special-function keys that can be used to control program functions, such as volume or brightness levels. Modern keyboards often include multimedia hotkeys, and are typically back-lit in order to make typing in the dark easier. Some keyboards may include a palm rest to help reduce fatigue caused by extended"
+    object(stdClass)#33 (4) {
       ["index"]=>
       int(0)
+      ["message"]=>
+      object(stdClass)#19 (4) {
+        ["role"]=>
+        string(9) "assistant"
+        ["content"]=>
+        string(604) "A keyboard is an input device used primarily to input text and commands into a computer or other electronic devices. Here are some key features and components of a typical keyboard:
+
+1. **Keys**: A standard keyboard contains a variety of keys, each with a specific function. These include:
+   - **Alphanumeric keys**: These are similar to those on a typewriter and include letters (A-Z), numbers (0-9), and punctuation symbols.
+   - **Function keys**: Usually labeled F1 through F12, these keys are located at the top of the keyboard and offer shortcuts for various system and application functions.
+   -"
+        ["refusal"]=>
+        NULL
+        ["annotations"]=>
+        array(0) {
+        }
+      }
       ["logprobs"]=>
       NULL
       ["finish_reason"]=>
@@ -80,15 +97,36 @@ A keyboard is a computer peripheral device used for entering data and commands i
     }
   }
   ["usage"]=>
-  object(stdClass)#18 (3) {
+  object(stdClass)#29 (5) {
     ["prompt_tokens"]=>
-    int(4)
+    int(10)
     ["completion_tokens"]=>
     int(128)
     ["total_tokens"]=>
-    int(132)
+    int(138)
+    ["prompt_tokens_details"]=>
+    object(stdClass)#22 (2) {
+      ["cached_tokens"]=>
+      int(0)
+      ["audio_tokens"]=>
+      int(0)
+    }
+    ["completion_tokens_details"]=>
+    object(stdClass)#20 (4) {
+      ["reasoning_tokens"]=>
+      int(0)
+      ["audio_tokens"]=>
+      int(0)
+      ["accepted_prediction_tokens"]=>
+      int(0)
+      ["rejected_prediction_tokens"]=>
+      int(0)
+    }
   }
-}
+  ["service_tier"]=>
+  string(7) "default"
+  ["system_fingerprint"]=>
+  string(13) "fp_b7faba9ef5"
 ```
 
 ### Chat
