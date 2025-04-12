@@ -2,7 +2,7 @@
 
 namespace OpenAI;
 
-use \Exception;
+use Exception;
 
 /**
  * OpenAI API exception.

@@ -38,7 +38,7 @@ class OpenAI
 
     /**
      * OpenAI library constructor.
-     * 
+     *
      * @param string $api_key the API key to use
      */
     public function __construct($api_key, $organization = null)
@@ -77,13 +77,13 @@ class OpenAI
         if ($method == 'POST') {
             // POST parameters are included in the request body as JSON.
             $options['json'] = (object) $parameters;
-        } else if ($method == 'multipart') {
+        } elseif ($method == 'multipart') {
             $options['multipart'] = $parameters;
         } else {
             // Request parameters are included in the query string for other methods.
             $options['query'] = $parameters;
         }
-  
+
         try {
             $url = $this->endpoint.$path;
             $response = $this->client->request(($method == 'multipart') ? 'POST' : $method, $url, $options);
@@ -93,14 +93,12 @@ class OpenAI
             } else {
                 return json_decode($response->getBody());
             }
-        }
-        catch (RequestException $e) {
+        } catch (RequestException $e) {
             if ($e->hasResponse()) {
                 $response = $e->getResponse();
                 $body = json_decode($response->getBody());
                 throw new OpenAIException($body->error->message, $response->getStatusCode(), $e);
-            }
-            else {
+            } else {
                 throw new OpenAIException($e->getMessage(), $e->getCode(), $e);
             }
         }

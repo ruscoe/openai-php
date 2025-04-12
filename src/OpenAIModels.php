@@ -14,7 +14,7 @@ class OpenAIModels extends OpenAI
 {
     /**
      * Gets available OpenAI models.
-     * 
+     *
      * @return object
      *
      * @see https://platform.openai.com/docs/api-reference/models/list

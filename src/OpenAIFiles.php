@@ -16,7 +16,7 @@ class OpenAIFiles extends OpenAI
 {
     /**
      * Gets files owned by the user's organization.
-     * 
+     *
      * @return object
      *
      * @see https://platform.openai.com/docs/api-reference/files/list
@@ -39,7 +39,7 @@ class OpenAIFiles extends OpenAI
      *
      * @see https://platform.openai.com/docs/api-reference/files/upload
      */
-    public function uploadFile($file, $purpose='fine-tune', $parameters = [])
+    public function uploadFile($file, $purpose = 'fine-tune', $parameters = [])
     {
         // Include file and purpose parameters in multipart data.
         $multipart = [
