@@ -299,12 +299,16 @@ Create and upload your training file. Example:
 
 **training.jsonl**
 ```
-{"prompt": "bird =", "completion": " animal"}
-{"prompt": "dog =", "completion": " animal"}
-{"prompt": "cat =", "completion": " animal"}
-{"prompt": "limestone =", "completion": " rock"}
-{"prompt": "shale =", "completion": " rock"}
-{"prompt": "marble =", "completion": " rock"}
+{"messages": [{"role": "system", "content": "A chatbot that knows the difference between animals and rocks."}, {"role": "user", "content": "What is a dog?"}, {"role": "assistant", "content": "A dog is an animal."}]}
+{"messages": [{"role": "system", "content": "A chatbot that knows the difference between animals and rocks."}, {"role": "user", "content": "What is a cat?"}, {"role": "assistant", "content": "A cat is an animal."}]}
+{"messages": [{"role": "system", "content": "A chatbot that knows the difference between animals and rocks."}, {"role": "user", "content": "What is a bird?"}, {"role": "assistant", "content": "A bird is an animal."}]}
+{"messages": [{"role": "system", "content": "A chatbot that knows the difference between animals and rocks."}, {"role": "user", "content": "What is a dolphin?"}, {"role": "assistant", "content": "A dolphin is an animal."}]}
+{"messages": [{"role": "system", "content": "A chatbot that knows the difference between animals and rocks."}, {"role": "user", "content": "What is a lion?"}, {"role": "assistant", "content": "A lion is an animal."}]}
+{"messages": [{"role": "system", "content": "A chatbot that knows the difference between animals and rocks."}, {"role": "user", "content": "What is limestone?"}, {"role": "assistant", "content": "Limestone is a rock."}]}
+{"messages": [{"role": "system", "content": "A chatbot that knows the difference between animals and rocks."}, {"role": "user", "content": "What is marble?"}, {"role": "assistant", "content": "Marble is a rock."}]}
+{"messages": [{"role": "system", "content": "A chatbot that knows the difference between animals and rocks."}, {"role": "user", "content": "What is granite?"}, {"role": "assistant", "content": "Granite is a rock."}]}
+{"messages": [{"role": "system", "content": "A chatbot that knows the difference between animals and rocks."}, {"role": "user", "content": "What is shale?"}, {"role": "assistant", "content": "Shale is a rock."}]}
+{"messages": [{"role": "system", "content": "A chatbot that knows the difference between animals and rocks."}, {"role": "user", "content": "What is basalt?"}, {"role": "assistant", "content": "Basalt is a rock."}]}
 ```
 
 ```php
@@ -335,8 +339,10 @@ Create a new training job using the file ID you've obtained:
 ```php
 $api = new OpenAI\OpenAIFineTunes($api_key);
 
-$api->create('file-1CO...');
+$api->create('gpt-4o-mini-2024-07-18', 'file-mQy...');
 ```
+
+Fine-tuning can take a while. Check the [Fine-tuning UI](https://platform.openai.com/finetune/) for updates.
 
 List models to get the name of your new fine-tuned model:
 
@@ -348,25 +354,37 @@ $models = $api->getModels();
 var_dump($models);
 ```
 
-The model name will start with `curie:ft` and end with the current date and time.
+The model name will look something like this: `ft:gpt-4o-mini-2024-07-18:personal::ABCABC`
 
 Create a new completion using your fine-tuned model.
 
 ```php
 $api = new OpenAI\OpenAICompletions($api_key);
 
-$response = $api->create('curie:ft...', 'dog =', 1, $parameters);
+$messages = [
+    (object) ['role' => 'user', 'content' => 'What is a dog?'],
+];
+
+$response = $api->create('ft:gpt-4o-mini-2024-07-18:personal::ABCABC', $messages);
+
+var_dump($response);
 ```
 
-The response should include "animal".
+The response should be "A dog is an animal."
 
 ```php
 $api = new OpenAI\OpenAICompletions($api_key);
 
-$response = $api->create('curie:ft...', 'marble =', 1, $parameters);
+$messages = [
+    (object) ['role' => 'user', 'content' => 'What is marble?'],
+];
+
+$response = $api->create('ft:gpt-4o-mini-2024-07-18:personal::ABCABC', $messages);
+
+var_dump($response);
 ```
 
-The response should include "rock".
+The response should be "Marble is a rock."
 
 
 ## Available functions

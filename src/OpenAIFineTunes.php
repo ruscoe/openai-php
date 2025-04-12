@@ -16,18 +16,20 @@ class OpenAIFineTunes extends OpenAI
     /**
      * Creates a fine-tune job.
      * 
+     * @param string $model the base model to fine-tune.
      * @param string $training_file the ID of the file to use for fine-tuning data.
      * 
      * @return object
      *
      * @see https://platform.openai.com/docs/api-reference/fine-tunes/create
      */
-    public function create($training_file, $parameters = [])
+    public function create($model, $training_file, $parameters = [])
     {
         // Add required parameters.
+        $parameters['model'] = $model;
         $parameters['training_file'] = $training_file;
 
-        return $this->request('POST', '/fine-tunes', $parameters);
+        return $this->request('POST', '/fine_tuning/jobs', $parameters);
     }
 
     /**
@@ -39,7 +41,7 @@ class OpenAIFineTunes extends OpenAI
      */
     public function getFineTunes()
     {
-        return $this->request('GET', '/fine-tunes');
+        return $this->request('GET', '/fine_tuning/jobs');
     }
 
     /**
@@ -53,7 +55,7 @@ class OpenAIFineTunes extends OpenAI
      */
     public function cancelFineTune($fine_tune_id)
     {
-        return $this->request('POST', '/fine-tunes/'.$fine_tune_id);
+        return $this->request('POST', '/fine_tuning/jobs/'.$fine_tune_id.'/cancel');
     }
 
     /**
@@ -67,7 +69,7 @@ class OpenAIFineTunes extends OpenAI
      */
     public function getFineTuneEvents($fine_tune_id)
     {
-        return $this->request('GET', '/fine-tunes/'.$fine_tune_id.'/events');
+        return $this->request('GET', '/fine_tuning/jobs/'.$fine_tune_id.'/events');
     }
 
     /**
