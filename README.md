@@ -243,8 +243,8 @@ var_dump($response);
 
 The response
 
-![img-OFmHrZWgvmnGmizogrqP5SGv](https://user-images.githubusercontent.com/87952/234959056-0c86d4ae-175c-49d5-b8ea-ca0e49a94186.png)
-![img-9O0Nv8GCurUr86pzzkv4dlJE](https://user-images.githubusercontent.com/87952/234959077-882399fc-bb9a-4479-b8ea-722e89c6acf3.png)
+![img-idDF5Pwt0q3X35QNJ65zJl0s](https://github.com/user-attachments/assets/9171b6e1-f90e-4bbd-a8a0-41808bbc795f)
+![img-Idq18QuOHuNE5us729mOKa2P](https://github.com/user-attachments/assets/d3db197d-6fdb-40c6-b16a-e214c08f9932)
 
 **Create image variation**
 
