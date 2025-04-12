@@ -147,49 +147,77 @@ $messages = [
     (object) ['role' => 'user', 'content' => 'Hello, friend!'],
 ];
 
-$response = $api->create('gpt-3.5-turbo', $messages);
+$response = $api->create('gpt-4o', $messages);
 
 var_dump($response);
 ```
 
 The response:
 ```
-object(stdClass)#35 (6) {
+object(stdClass)#35 (8) {
   ["id"]=>
-  string(38) "chatcmpl-7EqphlIJngrqxGAiDdtV9JMu89NhQ"
+  string(38) "chatcmpl-BLXdCiHRU78QMKpj9q7D36Kb6UIVg"
   ["object"]=>
   string(15) "chat.completion"
   ["created"]=>
-  int(1683774037)
+  int(1744473866)
   ["model"]=>
-  string(18) "gpt-3.5-turbo-0301"
-  ["usage"]=>
-  object(stdClass)#33 (3) {
-    ["prompt_tokens"]=>
-    int(12)
-    ["completion_tokens"]=>
-    int(10)
-    ["total_tokens"]=>
-    int(22)
-  }
+  string(17) "gpt-4o-2024-08-06"
   ["choices"]=>
   array(1) {
     [0]=>
-    object(stdClass)#29 (3) {
+    object(stdClass)#33 (4) {
+      ["index"]=>
+      int(0)
       ["message"]=>
-      object(stdClass)#19 (2) {
+      object(stdClass)#19 (4) {
         ["role"]=>
         string(9) "assistant"
         ["content"]=>
-        string(40) "Hello there, how may I assist you today?"
+        string(34) "Hello! How can I assist you today?"
+        ["refusal"]=>
+        NULL
+        ["annotations"]=>
+        array(0) {
+        }
       }
+      ["logprobs"]=>
+      NULL
       ["finish_reason"]=>
       string(4) "stop"
-      ["index"]=>
+    }
+  }
+  ["usage"]=>
+  object(stdClass)#29 (5) {
+    ["prompt_tokens"]=>
+    int(11)
+    ["completion_tokens"]=>
+    int(10)
+    ["total_tokens"]=>
+    int(21)
+    ["prompt_tokens_details"]=>
+    object(stdClass)#22 (2) {
+      ["cached_tokens"]=>
+      int(0)
+      ["audio_tokens"]=>
+      int(0)
+    }
+    ["completion_tokens_details"]=>
+    object(stdClass)#20 (4) {
+      ["reasoning_tokens"]=>
+      int(0)
+      ["audio_tokens"]=>
+      int(0)
+      ["accepted_prediction_tokens"]=>
+      int(0)
+      ["rejected_prediction_tokens"]=>
       int(0)
     }
   }
-}
+  ["service_tier"]=>
+  string(7) "default"
+  ["system_fingerprint"]=>
+  string(13) "fp_b7faba9ef5"
 ```
 
 ### Images
