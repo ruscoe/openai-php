@@ -266,7 +266,7 @@ var_dump($response);
 The source and response
 
 ![variation](https://user-images.githubusercontent.com/87952/234940408-4beec8a3-6a8b-44bd-b9d1-fda9a8a98c6e.png)
-![variation1](https://user-images.githubusercontent.com/87952/234940430-408e14c5-a338-49f7-918f-a3eee632dc1d.png)
+![img-ARP7fJQMVNwHsz1fVkKnCudb](https://github.com/user-attachments/assets/762e36a0-7c05-4743-9581-e6ca397b5a22)
 
 **Create image edit**
 
