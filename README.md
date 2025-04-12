@@ -6,7 +6,7 @@ An unofficial library for OpenAI's API.
 
 ## Requirements
 
-* PHP 5.4.0 or above
+* PHP 8.1 or above
 * [Composer](https://getcomposer.org)
 * An [OpenAI API key](https://platform.openai.com/docs/api-reference/authentication)
 
