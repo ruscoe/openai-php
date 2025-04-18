@@ -4,6 +4,10 @@ An unofficial library for OpenAI's API.
 
 ![release](https://img.shields.io/github/v/release/ruscoe/openai-php)
 
+## Used by
+
+[DrupalGen](https://github.com/ruscoe/drupalgen) - ChatGPT content generation for Drupal.
+
 ## Requirements
 
 * PHP 8.1 or above
