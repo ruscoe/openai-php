@@ -7,6 +7,7 @@ An unofficial library for OpenAI's API.
 ## Used by
 
 [DrupalGen](https://github.com/ruscoe/drupalgen) - ChatGPT content generation for Drupal.
+[GPT Fortune](https://github.com/ruscoe/gpt-fortune) - Generates a fortune cookie message using ChatGPT.
 
 ## Requirements
 
