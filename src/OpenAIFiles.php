@@ -37,7 +37,7 @@ class OpenAIFiles extends OpenAI
      *
      * @return object
      *
-     * @see https://platform.openai.com/docs/api-reference/files/upload
+     * @see https://platform.openai.com/docs/api-reference/files/create
      */
     public function uploadFile($file, $purpose = 'fine-tune', $parameters = [])
     {
