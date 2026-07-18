@@ -6,12 +6,6 @@ An unofficial library for OpenAI's API.
 
 ![release](https://img.shields.io/github/v/release/ruscoe/openai-php)
 
-## Used by
-
-* [DrupalGen](https://github.com/ruscoe/drupalgen) - ChatGPT content generation for Drupal.
-* [GPT Fortune](https://github.com/ruscoe/gpt-fortune) - Generates a fortune cookie message using ChatGPT.
-* [PHP AI Agents](https://github.com/ruscoe/php-ai-agents) - AI agents written in PHP.
-
 ## Requirements
 
 * PHP 8.1 or above
