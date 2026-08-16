@@ -8,7 +8,7 @@ An unofficial library for OpenAI's API.
 
 * PHP 8.1 or above
 * [Composer](https://getcomposer.org)
-* An [OpenAI API key](https://platform.openai.com/docs/api-reference/authentication)
+* An [OpenAI API key](https://developers.openai.com/api/reference/overview#authentication)
 
 ## Quick set up
 
