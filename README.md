@@ -286,7 +286,7 @@ The response should be "Marble is a rock."
 
 | Class             | Function                | Description                                                                 |
 |-------------------|-------------------------|-----------------------------------------------------------------------------|
-| OpenAIImages      | createAsURL             | Generates a number of images and returns URLs.                              |
+| OpenAIImages      | createAsFile            | Generates a number of images as files.                                      |
 | OpenAIImages      | createAsBase64          | Generates a number of images and returns Base64 encoded image(s).           |
 | OpenAIImages      | createVariationAsURL    | Generates a number of image variations and returns URL(s).                  |
 | OpenAIImages      | createVariationAsBase64 | Generates a number of image variations and returns Base64 encoded image(s). |
