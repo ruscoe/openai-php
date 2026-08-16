@@ -1,5 +1,3 @@
-![openai_php_banner](https://github.com/user-attachments/assets/2da1684b-192d-42ad-b500-3457a70be69b)
-
 # PHP library for the OpenAI API
 
 An unofficial library for OpenAI's API.
