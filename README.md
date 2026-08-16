@@ -38,7 +38,7 @@ tokens so a reasonable length description can be returned.
 
 require __DIR__ . '/vendor/autoload.php';
 
-// @see https://platform.openai.com/docs/api-reference/authentication
+// @see https://developers.openai.com/api/reference/overview#authentication
 $api_key = getenv('OPENAI_API_KEY');
 
 $api = new OpenAI\OpenAICompletions($api_key);
@@ -70,7 +70,7 @@ This example sends a simple chat message.
 
 require __DIR__ . '/vendor/autoload.php';
 
-// @see https://platform.openai.com/docs/api-reference/authentication
+// @see https://developers.openai.com/api/reference/overview#authentication
 $api_key = getenv('OPENAI_API_KEY');
 
 $api = new OpenAI\OpenAIChat($api_key);
@@ -100,7 +100,7 @@ This example asks for an image of a jungle waterfall.
 
 require __DIR__ . '/vendor/autoload.php';
 
-// @see https://platform.openai.com/docs/api-reference/authentication
+// @see https://developers.openai.com/api/reference/overview#authentication
 $api_key = getenv('OPENAI_API_KEY');
 
 $api = new OpenAI\OpenAIImages($api_key);
@@ -119,7 +119,7 @@ The response
 
 require __DIR__ . '/vendor/autoload.php';
 
-// @see https://platform.openai.com/docs/api-reference/authentication
+// @see https://developers.openai.com/api/reference/overview#authentication
 $api_key = getenv('OPENAI_API_KEY');
 
 $api = new OpenAI\OpenAIImages($api_key);
@@ -127,7 +127,7 @@ $api = new OpenAI\OpenAIImages($api_key);
 $response = $api->createEditAsFile('gpt-image-2', 'samples/car.png', 'a duck driving a car', 'edit.png', 'samples/car_mask.png', 1, '1024x1024');
 ```
 
-The source and response
+The source and response:
 
 ![car.png](samples/car.png)
 ![car_mask.png](samples/car_mask.png)
@@ -135,7 +135,7 @@ The source and response
 
 ## Fine-tuning a model
 
-First, take a look at the [official documentation on fine-tuning](https://platform.openai.com/docs/guides/fine-tuning).
+First, take a look at the [official documentation on fine-tuning](https://developers.openai.com/api/docs/guides/supervised-fine-tuning).
 
 Create and upload your training file. Example:
 
@@ -158,7 +158,7 @@ Create and upload your training file. Example:
 
 require __DIR__ . '/vendor/autoload.php';
 
-// @see https://platform.openai.com/docs/api-reference/authentication
+// @see https://developers.openai.com/api/reference/overview#authentication
 $api_key = getenv('OPENAI_API_KEY');
 
 $api = new OpenAI\OpenAIFiles($api_key);
