@@ -31,7 +31,7 @@ Be sure to substitute your own API key after `OPENAI_API_KEY=`.
 
 ### Completions
 
-This example asks the `gpt-4o` model to describe a keyboard.
+This example asks the `gpt-4o` model to describe a computer keyboard.
 It instructs the OpenAI API to use more than the default number of
 tokens so a reasonable length description can be returned.
 
@@ -50,85 +50,17 @@ $parameters = [
 ];
 
 $messages = [
-    (object) ['role' => 'user', 'content' => 'Describe a keyboard']
+    (object) ['role' => 'user', 'content' => 'Briefly describe a computer keyboard']
 ];
 
 $response = $api->create('gpt-4o', $messages, 1, $parameters);
 
-var_dump($response);
+var_dump($response->choices[0]->message->content);
 ```
 
 The response:
 ```
-object(stdClass)#35 (8) {
-  ["id"]=>
-  string(38) "chatcmpl-BLXYoMfybsQQjP1xlKjUtEL6chvHE"
-  ["object"]=>
-  string(15) "chat.completion"
-  ["created"]=>
-  int(1744473594)
-  ["model"]=>
-  string(17) "gpt-4o-2024-08-06"
-  ["choices"]=>
-  array(1) {
-    [0]=>
-    object(stdClass)#33 (4) {
-      ["index"]=>
-      int(0)
-      ["message"]=>
-      object(stdClass)#19 (4) {
-        ["role"]=>
-        string(9) "assistant"
-        ["content"]=>
-        string(604) "A keyboard is an input device used primarily to input text and commands into a computer or other electronic devices. Here are some key features and components of a typical keyboard:
-
-1. **Keys**: A standard keyboard contains a variety of keys, each with a specific function. These include:
-   - **Alphanumeric keys**: These are similar to those on a typewriter and include letters (A-Z), numbers (0-9), and punctuation symbols.
-   - **Function keys**: Usually labeled F1 through F12, these keys are located at the top of the keyboard and offer shortcuts for various system and application functions.
-   -"
-        ["refusal"]=>
-        NULL
-        ["annotations"]=>
-        array(0) {
-        }
-      }
-      ["logprobs"]=>
-      NULL
-      ["finish_reason"]=>
-      string(6) "length"
-    }
-  }
-  ["usage"]=>
-  object(stdClass)#29 (5) {
-    ["prompt_tokens"]=>
-    int(10)
-    ["completion_tokens"]=>
-    int(128)
-    ["total_tokens"]=>
-    int(138)
-    ["prompt_tokens_details"]=>
-    object(stdClass)#22 (2) {
-      ["cached_tokens"]=>
-      int(0)
-      ["audio_tokens"]=>
-      int(0)
-    }
-    ["completion_tokens_details"]=>
-    object(stdClass)#20 (4) {
-      ["reasoning_tokens"]=>
-      int(0)
-      ["audio_tokens"]=>
-      int(0)
-      ["accepted_prediction_tokens"]=>
-      int(0)
-      ["rejected_prediction_tokens"]=>
-      int(0)
-    }
-  }
-  ["service_tier"]=>
-  string(7) "default"
-  ["system_fingerprint"]=>
-  string(13) "fp_b7faba9ef5"
+string(648) "A computer keyboard is an input device used to enter text, numbers, and commands into a computer or other electronic devices. It is composed of an array of keys that includes the standard QWERTY layout for typing letters and numbers, along with various function keys, control keys, and special keys. Keyboards often feature additional keys or combinations for shortcuts and can vary in design, including wired or wireless models, ergonomic designs, and gaming keyboards with customizable keys and backlighting. They may also include a numeric keypad, arrow keys, and other keys like Escape, Tab, Caps Lock, Shift, Ctrl, Alt, and Enter, each serving"
 ```
 
 ### Chat
@@ -151,75 +83,12 @@ $messages = [
 
 $response = $api->create('gpt-4o', $messages);
 
-var_dump($response);
+var_dump($response->choices[0]->message->content);
 ```
 
 The response:
 ```
-object(stdClass)#35 (8) {
-  ["id"]=>
-  string(38) "chatcmpl-BLXdCiHRU78QMKpj9q7D36Kb6UIVg"
-  ["object"]=>
-  string(15) "chat.completion"
-  ["created"]=>
-  int(1744473866)
-  ["model"]=>
-  string(17) "gpt-4o-2024-08-06"
-  ["choices"]=>
-  array(1) {
-    [0]=>
-    object(stdClass)#33 (4) {
-      ["index"]=>
-      int(0)
-      ["message"]=>
-      object(stdClass)#19 (4) {
-        ["role"]=>
-        string(9) "assistant"
-        ["content"]=>
-        string(34) "Hello! How can I assist you today?"
-        ["refusal"]=>
-        NULL
-        ["annotations"]=>
-        array(0) {
-        }
-      }
-      ["logprobs"]=>
-      NULL
-      ["finish_reason"]=>
-      string(4) "stop"
-    }
-  }
-  ["usage"]=>
-  object(stdClass)#29 (5) {
-    ["prompt_tokens"]=>
-    int(11)
-    ["completion_tokens"]=>
-    int(10)
-    ["total_tokens"]=>
-    int(21)
-    ["prompt_tokens_details"]=>
-    object(stdClass)#22 (2) {
-      ["cached_tokens"]=>
-      int(0)
-      ["audio_tokens"]=>
-      int(0)
-    }
-    ["completion_tokens_details"]=>
-    object(stdClass)#20 (4) {
-      ["reasoning_tokens"]=>
-      int(0)
-      ["audio_tokens"]=>
-      int(0)
-      ["accepted_prediction_tokens"]=>
-      int(0)
-      ["rejected_prediction_tokens"]=>
-      int(0)
-    }
-  }
-  ["service_tier"]=>
-  string(7) "default"
-  ["system_fingerprint"]=>
-  string(13) "fp_b7faba9ef5"
+string(34) "Hello! How can I assist you today?"
 ```
 
 ### Images
