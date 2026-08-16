@@ -82,7 +82,7 @@ class OpenAIImages extends OpenAI
      *                           256x256, 512x512, or 1024x1024
      * @param array  $parameters optional array of parameters to use
      *
-     * @return array a URL for each image generated
+     * @return array base64 data for each image generated
      *
      * @see https://developers.openai.com/api/reference/resources/images/methods/generate
      */
@@ -130,9 +130,9 @@ class OpenAIImages extends OpenAI
      *                           256x256, 512x512, or 1024x1024
      * @param array  $parameters optional array of parameters to use
      *
-     * @return array a URL for each image generated
+     * @return bool true if images have been generated
      *
-     * @see https://platform.openai.com/docs/api-reference/images/create-edit
+     * @see https://developers.openai.com/api/reference/resources/images/methods/edit
      */
     public function createEditAsFile($model, $image, $prompt, $output, $mask = null, $number = 1, $size = '1024x1024', $parameters = [])
     {
@@ -177,7 +177,7 @@ class OpenAIImages extends OpenAI
      *                           256x256, 512x512, or 1024x1024
      * @param array  $parameters optional array of parameters to use
      *
-     * @return array a URL for each image generated
+     * @return array base64 data for each image generated
      *
      * @see https://platform.openai.com/docs/api-reference/images/create-edit
      */
