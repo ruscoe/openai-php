@@ -114,28 +114,6 @@ The response
 
 ![waterfall.png](samples/waterfall.png)
 
-**Create image variation**
-
-```php
-<?php
-
-require __DIR__ . '/vendor/autoload.php';
-
-// @see https://platform.openai.com/docs/api-reference/authentication
-$api_key = getenv('OPENAI_API_KEY');
-
-$api = new OpenAI\OpenAIImages($api_key);
-
-$response = $api->createVariationAsURL('variation.png', 1, '256x256');
-
-var_dump($response);
-```
-
-The source and response
-
-![variation](https://user-images.githubusercontent.com/87952/234940408-4beec8a3-6a8b-44bd-b9d1-fda9a8a98c6e.png)
-![img-ARP7fJQMVNwHsz1fVkKnCudb](https://github.com/user-attachments/assets/762e36a0-7c05-4743-9581-e6ca397b5a22)
-
 **Create image edit**
 
 ```php
@@ -288,9 +266,6 @@ The response should be "Marble is a rock."
 |-------------------|-------------------------|-----------------------------------------------------------------------------|
 | OpenAIImages      | createAsFile            | Generates a number of images as files.                                      |
 | OpenAIImages      | createAsBase64          | Generates a number of images and returns Base64 encoded image(s).           |
-| OpenAIImages      | createVariationAsURL    | Generates a number of image variations and returns URL(s).                  |
-| OpenAIImages      | createVariationAsBase64 | Generates a number of image variations and returns Base64 encoded image(s). |
-| OpenAIImages      | createVariation         | Generates a number of image variations from a given image.                  |
 | OpenAIImages      | createEditAsURL         | Generates a number of image edits and returns URL(s).                       |
 | OpenAIImages      | createEditAsBase64      | Generates a number of image edits and returns Base64 encoded image(s).      |
 | OpenAIImages      | createEdit              | Generates a number of image edits from a given image.                       |
