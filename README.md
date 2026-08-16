@@ -239,8 +239,6 @@ $api_key = getenv('OPENAI_API_KEY');
 $api = new OpenAI\OpenAIImages($api_key);
 
 $response = $api->createAsFile('gpt-image-2', 'A jungle waterfall', 'waterfall.png', 1, '1024x1024');
-
-var_dump($response);
 ```
 
 The response
