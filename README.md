@@ -112,7 +112,7 @@ $response = $api->createAsFile('gpt-image-2', 'A jungle waterfall', 'waterfall.p
 
 The response
 
-![img-idDF5Pwt0q3X35QNJ65zJl0s](https://github.com/user-attachments/assets/9171b6e1-f90e-4bbd-a8a0-41808bbc795f)
+![waterfall.png](samples/waterfall.png)
 
 **Create image variation**
 
