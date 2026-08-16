@@ -133,102 +133,6 @@ The source and response:
 ![car_mask.png](samples/car_mask.png)
 ![car_edit.png](samples/car_edit.png)
 
-## Fine-tuning a model
-
-First, take a look at the [official documentation on fine-tuning](https://developers.openai.com/api/docs/guides/supervised-fine-tuning).
-
-Create and upload your training file. Example:
-
-**training.jsonl**
-```
-{"messages": [{"role": "system", "content": "A chatbot that knows the difference between animals and rocks."}, {"role": "user", "content": "What is a dog?"}, {"role": "assistant", "content": "A dog is an animal."}]}
-{"messages": [{"role": "system", "content": "A chatbot that knows the difference between animals and rocks."}, {"role": "user", "content": "What is a cat?"}, {"role": "assistant", "content": "A cat is an animal."}]}
-{"messages": [{"role": "system", "content": "A chatbot that knows the difference between animals and rocks."}, {"role": "user", "content": "What is a bird?"}, {"role": "assistant", "content": "A bird is an animal."}]}
-{"messages": [{"role": "system", "content": "A chatbot that knows the difference between animals and rocks."}, {"role": "user", "content": "What is a dolphin?"}, {"role": "assistant", "content": "A dolphin is an animal."}]}
-{"messages": [{"role": "system", "content": "A chatbot that knows the difference between animals and rocks."}, {"role": "user", "content": "What is a lion?"}, {"role": "assistant", "content": "A lion is an animal."}]}
-{"messages": [{"role": "system", "content": "A chatbot that knows the difference between animals and rocks."}, {"role": "user", "content": "What is limestone?"}, {"role": "assistant", "content": "Limestone is a rock."}]}
-{"messages": [{"role": "system", "content": "A chatbot that knows the difference between animals and rocks."}, {"role": "user", "content": "What is marble?"}, {"role": "assistant", "content": "Marble is a rock."}]}
-{"messages": [{"role": "system", "content": "A chatbot that knows the difference between animals and rocks."}, {"role": "user", "content": "What is granite?"}, {"role": "assistant", "content": "Granite is a rock."}]}
-{"messages": [{"role": "system", "content": "A chatbot that knows the difference between animals and rocks."}, {"role": "user", "content": "What is shale?"}, {"role": "assistant", "content": "Shale is a rock."}]}
-{"messages": [{"role": "system", "content": "A chatbot that knows the difference between animals and rocks."}, {"role": "user", "content": "What is basalt?"}, {"role": "assistant", "content": "Basalt is a rock."}]}
-```
-
-```php
-<?php
-
-require __DIR__ . '/vendor/autoload.php';
-
-// @see https://developers.openai.com/api/reference/overview#authentication
-$api_key = getenv('OPENAI_API_KEY');
-
-$api = new OpenAI\OpenAIFiles($api_key);
-
-$file = $api->uploadFile('training.jsonl');
-```
-
-List your files to get the file ID:
-
-```php
-$api = new OpenAI\OpenAIFiles($api_key);
-
-$files = $api->getFiles();
-
-var_dump($files);
-```
-
-Create a new training job using the file ID you've obtained:
-
-```php
-$api = new OpenAI\OpenAIFineTunes($api_key);
-
-$api->create('gpt-4o-mini-2024-07-18', 'file-mQy...');
-```
-
-Fine-tuning can take a while. Check the [Fine-tuning UI](https://platform.openai.com/finetune/) for updates.
-
-List models to get the name of your new fine-tuned model:
-
-```php
-$api = new OpenAI\OpenAIModels($api_key);
-
-$models = $api->getModels();
-
-var_dump($models);
-```
-
-The model name will look something like this: `ft:gpt-4o-mini-2024-07-18:personal::ABCABC`
-
-Create a new completion using your fine-tuned model.
-
-```php
-$api = new OpenAI\OpenAICompletions($api_key);
-
-$messages = [
-    (object) ['role' => 'user', 'content' => 'What is a dog?'],
-];
-
-$response = $api->create('ft:gpt-4o-mini-2024-07-18:personal::ABCABC', $messages);
-
-var_dump($response);
-```
-
-The response should be "A dog is an animal."
-
-```php
-$api = new OpenAI\OpenAICompletions($api_key);
-
-$messages = [
-    (object) ['role' => 'user', 'content' => 'What is marble?'],
-];
-
-$response = $api->create('ft:gpt-4o-mini-2024-07-18:personal::ABCABC', $messages);
-
-var_dump($response);
-```
-
-The response should be "Marble is a rock."
-
-
 ## Available functions
 
 ### Models
@@ -287,16 +191,6 @@ The response should be "Marble is a rock."
 | OpenAIFiles       | deleteFile              | Deletes a file.                                                             |
 | OpenAIFiles       | getFile                 | Gets information about a file.                                              |
 | OpenAIFiles       | getFileContent          | Gets the content of a file.                                                 |
-
-### Fine-Tunes
-
-| Class             | Function                | Description                                                                 |
-|-------------------|-------------------------|-----------------------------------------------------------------------------|
-| OpenAIFineTunes   | create                  | Creates a fine-tune job.                                                    |
-| OpenAIFineTunes   | getFineTunes            | Gets existing fine-tunes.                                                   |
-| OpenAIFineTunes   | cancelFineTune          | Cancels a fine-tune job.                                                    |
-| OpenAIFineTunes   | getFineTuneEvents       | Gets status updates of a fine-tune job.                                     |
-| OpenAIFineTunes   | deleteModel             | Deletes a fine-tuned model.                                                 |
 
 ### Moderations
 
