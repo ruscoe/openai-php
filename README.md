@@ -126,16 +126,14 @@ $api_key = getenv('OPENAI_API_KEY');
 
 $api = new OpenAI\OpenAIImages($api_key);
 
-$response = $api->createEditAsURL('edit.png', 'a duck driving a car', 'edit_mask.png', 1, '256x256');
-
-var_dump($response);
+$response = $api->createEditAsFile('gpt-image-2', 'samples/car.png', 'a duck driving a car', 'edit.png', 'samples/car_mask.png', 1, '1024x1024');
 ```
 
 The source and response
 
-![edit](https://user-images.githubusercontent.com/87952/234949655-8d055b40-e668-4e38-8c35-e6823c4fa047.png)
-![edit_mask](https://user-images.githubusercontent.com/87952/234949679-624f6ee2-1e15-487a-9332-3bad136343ca.png)
-![edit1](https://user-images.githubusercontent.com/87952/234949702-566aa1d7-f7c1-4788-b1c7-8b2b7bbcf468.png)
+![car.png](samples/car.png)
+![car_mask.png](samples/car_mask.png)
+![car_edit.png](samples/car_edit.png)
 
 ## Fine-tuning a model
 
@@ -266,7 +264,7 @@ The response should be "Marble is a rock."
 |-------------------|-------------------------|-----------------------------------------------------------------------------|
 | OpenAIImages      | createAsFile            | Generates a number of images as files.                                      |
 | OpenAIImages      | createAsBase64          | Generates a number of images and returns Base64 encoded image(s).           |
-| OpenAIImages      | createEditAsURL         | Generates a number of image edits and returns URL(s).                       |
+| OpenAIImages      | createEditAsFile        | Generates a number of image edits as files.                                 |
 | OpenAIImages      | createEditAsBase64      | Generates a number of image edits and returns Base64 encoded image(s).      |
 | OpenAIImages      | createEdit              | Generates a number of image edits from a given image.                       |
 

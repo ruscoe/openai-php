@@ -15,7 +15,7 @@ use GuzzleHttp\Psr7;
 class OpenAIImages extends OpenAI
 {
     /**
-     * Generates a number of images and returns URLs.
+     * Generates a number of images as files.
      *
      * @param string $model      the model ID to use when creating the image
      *                           Example:
@@ -110,10 +110,20 @@ class OpenAIImages extends OpenAI
     }
 
     /**
-     * Generates a number of image edits and returns URL(s).
+     * Generates a number of image edits as files.
      *
+     * @param string $model      the model ID to use when creating the image
+     *                           Example:
+     *                           gpt-image-2
      * @param string $image      the path to the image file
      * @param string $prompt     a description of the edit to make
+     * @param string $output     the output filename
+     *                           Example:
+     *                           edit.png
+     *                           Note that if $number if set to a value greater than
+     *                           1, multiple files will be created. Example:
+     *                           1_edit.png
+     *                           2_edit.png
      * @param string $mask       the path to the mask image file
      * @param int    $number     the number of images to generate
      * @param string $size       the size in pixels of the image
@@ -124,28 +134,36 @@ class OpenAIImages extends OpenAI
      *
      * @see https://platform.openai.com/docs/api-reference/images/create-edit
      */
-    public function createEditAsURL($image, $prompt, $mask = null, $number = 1, $size = '1024x1024', $parameters = [])
+    public function createEditAsFile($model, $image, $prompt, $output, $mask = null, $number = 1, $size = '1024x1024', $parameters = [])
     {
         // Add required parameters.
+        $parameters['model'] = $model;
         $parameters['n'] = $number;
         $parameters['size'] = $size;
 
-        // Enforce response format as url for this function.
-        $parameters['response_format'] = 'url';
-
         $response = $this->createEdit($image, $prompt, $mask, $parameters);
 
+        $count = 1;
         if (isset($response->data)) {
-            $urls = [];
-
             foreach ($response->data as $object) {
-                $urls[] = $object->url;
+                $image = base64_decode($object->b64_json, true);
+
+                $filename = $output;
+                if ($number > 1) {
+                    $filename = $count . '_' . $filename;
+                }
+
+                if (file_put_contents($filename, $image) === false) {
+                    throw new OpenAIException('Unable to write file output.');
+                }
+
+                $count++;
             }
 
-            return $urls;
+            return true;
         }
 
-        return null;
+        return false;
     }
 
     /**
