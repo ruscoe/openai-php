@@ -179,7 +179,7 @@ class OpenAIImages extends OpenAI
      *
      * @return array base64 data for each image generated
      *
-     * @see https://platform.openai.com/docs/api-reference/images/create-edit
+     * @see https://developers.openai.com/api/reference/resources/images/methods/edit
      */
     public function createEditAsBase64($image, $prompt, $mask = null, $number = 1, $size = '1024x1024', $parameters = [])
     {
