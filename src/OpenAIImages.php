@@ -17,44 +17,65 @@ class OpenAIImages extends OpenAI
     /**
      * Generates a number of images and returns URLs.
      *
+     * @param string $model      the model ID to use when creating the image
+     *                           Example:
+     *                           gpt-image-2
      * @param string $prompt     a description of the image to generate
+     * @param string $output     the output filename
+     *                           Example:
+     *                           waterfall.png
+     *                           Note that if $number if set to a value greater than
+     *                           1, multiple files will be created. Example:
+     *                           1_waterfall.png
+     *                           2_waterfall.png
      * @param int    $number     the number of images to generate
      * @param string $size       the size in pixels of the image
      *                           256x256, 512x512, or 1024x1024
      * @param array  $parameters optional array of parameters to use
      *
-     * @return array a URL for each image generated
+     * @return bool true if images have been generated
      *
      * @see https://platform.openai.com/docs/api-reference/images/create
      */
-    public function createAsURL($prompt, $number = 1, $size = '1024x1024', $parameters = [])
+    public function createAsFile($model, $prompt, $output, $number = 1, $size = '1024x1024', $parameters = [])
     {
         // Add required parameters.
+        $parameters['model'] = $model;
         $parameters['prompt'] = $prompt;
         $parameters['n'] = $number;
         $parameters['size'] = $size;
 
-        // Enforce response format as URL for this function.
-        $parameters['response_format'] = 'url';
-
         $response = $this->request('POST', '/images/generations', $parameters);
 
+        $count = 1;
         if (isset($response->data)) {
-            $urls = [];
-
             foreach ($response->data as $object) {
-                $urls[] = $object->url;
+                $image = base64_decode($object->b64_json, true);
+
+                $filename = $output;
+                if ($number > 1) {
+                    $filename = $count . '_' . $filename;
+                }
+
+                if (file_put_contents($filename, $image) === false) {
+                    throw new OpenAIException('Unable to write file output.');
+                }
+
+                $count++;
             }
 
-            return $urls;
+            return true;
         }
 
-        return null;
+        return false;
     }
 
     /**
      * Generates a number of images and returns Base64 encoded image(s).
      *
+     * @param string $model      the model ID to use when creating the image
+     *                           Example:
+     *                           gpt-image-2
      * @param string $prompt     a description of the image to generate
      * @param int    $number     the number of images to generate
      * @param string $size       the size in pixels of the image
@@ -65,15 +86,13 @@ class OpenAIImages extends OpenAI
      *
      * @see https://platform.openai.com/docs/api-reference/images/create
      */
-    public function createAsBase64($prompt, $number = 1, $size = '1024x1024', $parameters = [])
+    public function createAsBase64($model, $prompt, $output, $number = 1, $size = '1024x1024', $parameters = [])
     {
         // Add required parameters.
+        $parameters['model'] = $model;
         $parameters['prompt'] = $prompt;
         $parameters['n'] = $number;
         $parameters['size'] = $size;
-
-        // Enforce response format as b64_json for this function.
-        $parameters['response_format'] = 'b64_json';
 
         $response = $this->request('POST', '/images/generations', $parameters);
 

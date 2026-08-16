@@ -226,7 +226,7 @@ object(stdClass)#35 (8) {
 
 **Create image**
 
-This example asks for two images of a jungle waterfall.
+This example asks for an image of a jungle waterfall.
 
 ```php
 <?php
@@ -238,7 +238,7 @@ $api_key = getenv('OPENAI_API_KEY');
 
 $api = new OpenAI\OpenAIImages($api_key);
 
-$response = $api->createAsURL('A jungle waterfall', 2, '256x256');
+$response = $api->createAsFile('gpt-image-2', 'A jungle waterfall', 'waterfall.png', 1, '1024x1024');
 
 var_dump($response);
 ```
@@ -246,7 +246,6 @@ var_dump($response);
 The response
 
 ![img-idDF5Pwt0q3X35QNJ65zJl0s](https://github.com/user-attachments/assets/9171b6e1-f90e-4bbd-a8a0-41808bbc795f)
-![img-Idq18QuOHuNE5us729mOKa2P](https://github.com/user-attachments/assets/d3db197d-6fdb-40c6-b16a-e214c08f9932)
 
 **Create image variation**
 
