@@ -35,7 +35,7 @@ class OpenAIImages extends OpenAI
      *
      * @return bool true if images have been generated
      *
-     * @see https://platform.openai.com/docs/api-reference/images/create
+     * @see https://developers.openai.com/api/reference/resources/images/methods/generate
      */
     public function createAsFile($model, $prompt, $output, $number = 1, $size = '1024x1024', $parameters = [])
     {
@@ -84,7 +84,7 @@ class OpenAIImages extends OpenAI
      *
      * @return array a URL for each image generated
      *
-     * @see https://platform.openai.com/docs/api-reference/images/create
+     * @see https://developers.openai.com/api/reference/resources/images/methods/generate
      */
     public function createAsBase64($model, $prompt, $output, $number = 1, $size = '1024x1024', $parameters = [])
     {
