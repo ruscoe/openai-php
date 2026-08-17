@@ -65,7 +65,10 @@ class OpenAI
     public function request($method, $path, $parameters = [], $options = [])
     {
         // Set up authentication.
-        $headers = ['Authorization' => 'Bearer ' . $this->api_key];
+        $headers = [
+            'Authorization' => 'Bearer ' . $this->api_key,
+            'User-Agent' => 'PHP library for the OpenAI API (https://github.com/ruscoe/openai-php)',
+        ];
 
         // Set up optional organization.
         if ($this->organization !== null) {
