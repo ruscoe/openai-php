@@ -19,7 +19,7 @@ class OpenAIFiles extends OpenAI
      *
      * @return object
      *
-     * @see https://platform.openai.com/docs/api-reference/files/list
+     * @see https://developers.openai.com/api/reference/resources/files/methods/list
      */
     public function getFiles()
     {
@@ -37,7 +37,7 @@ class OpenAIFiles extends OpenAI
      *
      * @return object
      *
-     * @see https://platform.openai.com/docs/api-reference/files/create
+     * @see https://developers.openai.com/api/reference/resources/files/methods/create
      */
     public function uploadFile($file, $purpose = 'fine-tune', $parameters = [])
     {
@@ -71,7 +71,7 @@ class OpenAIFiles extends OpenAI
      *
      * @return object
      *
-     * @see https://platform.openai.com/docs/api-reference/files/delete
+     * @see https://developers.openai.com/api/reference/resources/files/methods/delete
      */
     public function deleteFile($file_id)
     {
@@ -85,7 +85,7 @@ class OpenAIFiles extends OpenAI
      *
      * @return object
      *
-     * @see https://platform.openai.com/docs/api-reference/files/retrieve
+     * @see https://developers.openai.com/api/reference/resources/files/methods/retrieve
      */
     public function getFile($file_id)
     {

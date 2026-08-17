@@ -25,7 +25,7 @@ class OpenAIAudio extends OpenAI
      *
      * @return object
      *
-     * @see https://platform.openai.com/docs/api-reference/audio/create
+     * @see https://developers.openai.com/api/reference/resources/audio/subresources/transcriptions/methods/create
      */
     public function transcribe($file, $model = 'whisper-1', $parameters = [])
     {

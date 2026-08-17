@@ -21,7 +21,7 @@ class OpenAIModerations extends OpenAI
      *
      * @return object
      *
-     * @see https://platform.openai.com/docs/api-reference/moderations/create
+     * @see https://developers.openai.com/api/reference/resources/moderations/methods/create
      */
     public function create($input, $parameters = [])
     {

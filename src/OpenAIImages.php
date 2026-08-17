@@ -215,7 +215,7 @@ class OpenAIImages extends OpenAI
      *
      * @return object
      *
-     * @see https://platform.openai.com/docs/api-reference/images/create-edit
+     * @see https://developers.openai.com/api/reference/resources/images/methods/edit
      */
     public function createEdit($image, $prompt, $mask = null, $parameters = [])
     {

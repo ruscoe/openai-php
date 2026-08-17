@@ -25,7 +25,7 @@ class OpenAIEdits extends OpenAI
      * @return object
      *
      * @see https://platform.openai.com/docs/api-reference/edits/create
-     * @see https://platform.openai.com/docs/models/model-endpoint-compatibility
+     * @see https://developers.openai.com/api/docs/models
      */
     public function create($model, $input, $instruction, $parameters = [])
     {

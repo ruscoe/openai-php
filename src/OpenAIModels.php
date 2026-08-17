@@ -17,7 +17,7 @@ class OpenAIModels extends OpenAI
      *
      * @return object
      *
-     * @see https://platform.openai.com/docs/api-reference/models/list
+     * @see https://developers.openai.com/api/reference/resources/models/methods/list
      */
     public function getModels()
     {
@@ -32,7 +32,7 @@ class OpenAIModels extends OpenAI
      *
      * @return object
      *
-     * @see https://platform.openai.com/docs/api-reference/models/retrieve
+     * @see https://developers.openai.com/api/reference/resources/models/methods/retrieve
      */
     public function getModel($model)
     {

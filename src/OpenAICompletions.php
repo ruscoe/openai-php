@@ -26,8 +26,8 @@ class OpenAICompletions extends OpenAI
      *
      * @return object
      *
-     * @see https://platform.openai.com/docs/api-reference/completions/create
-     * @see https://platform.openai.com/docs/models/model-endpoint-compatibility
+     * @see https://developers.openai.com/api/reference/resources/completions/methods/create
+     * @see https://developers.openai.com/api/docs/models
      */
     public function create($model, $messages = null, $number = 1, $parameters = [])
     {
