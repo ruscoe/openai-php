@@ -133,6 +133,25 @@ The source and response:
 ![car_mask.png](samples/car_mask.png)
 ![car_edit.png](samples/car_edit.png)
 
+```php
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+// @see https://developers.openai.com/api/reference/overview#authentication
+$api_key = getenv('OPENAI_API_KEY');
+
+$api = new OpenAI\OpenAIImages($api_key);
+
+$response = $api->createEditAsFile('gpt-image-2', 'samples/skull.png', 'create a color pencil version of this image', 'skull_variation.png', NULL, 1, '1024x1024');
+
+```
+
+The source and response:
+
+![skull.png](samples/skull.png)
+![skull_variation.png](samples/skull_variation.png)
+
 ## Available functions
 
 ### Models
