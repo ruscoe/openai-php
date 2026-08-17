@@ -108,7 +108,7 @@ $api = new OpenAI\OpenAIImages($api_key);
 $response = $api->createAsFile('gpt-image-2', 'A jungle waterfall', 'waterfall.png', 1, '1024x1024');
 ```
 
-The response
+The response:
 
 ![waterfall.png](samples/waterfall.png)
 
@@ -151,6 +151,30 @@ The source and response:
 
 ![skull.png](samples/skull.png)
 ![skull_variation.png](samples/skull_variation.png)
+
+## Audio
+
+**Transcribe audio**
+
+```php
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+// @see https://developers.openai.com/api/reference/overview#authentication
+$api_key = getenv('OPENAI_API_KEY');
+
+$api = new OpenAI\OpenAIAudio($api_key);
+
+$response = $api->transcribe('samples/museum.ogg');
+
+var_dump($response->text);
+```
+
+The response:
+```
+string(140) "The British Museum in London is the United Kingdom's and one of the world's largest and most important museums of human history and culture."
+```
 
 ## Available functions
 
